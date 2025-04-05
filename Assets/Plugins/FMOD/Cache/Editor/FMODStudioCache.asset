@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/eng_game_lose
   Guid:
-    Data1: -550451638
-    Data2: 1155408628
-    Data3: 886369188
-    Data4: -1824089358
+    Data1: -421792757
+    Data2: 1263062054
+    Data3: 1449628859
+    Data4: -504960390
   Banks:
   - {fileID: 8309656777790805819}
   IsStream: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/AMBIENCE.bank
+  m_Name: bank:/SFX.bank
   m_EditorClassIdentifier: 
   Path: fmod_ngj2025/sleep2/Build/Desktop/AMBIENCE.bank
   Name: AMBIENCE
@@ -45,7 +45,27 @@ MonoBehaviour:
   lastModified: 638794683472325069
   FileSizes:
   - Name: Desktop
-    Value: 506
+    Value: 71936
+  Exists: 1
+--- !u!114 &-2241244446333997364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: fmod_project/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638794810932763112
+  FileSizes:
+  - Name: Desktop
+    Value: 1394
   Exists: 1
 --- !u!114 &-6660091814092650425
 MonoBehaviour:
@@ -110,8 +130,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/soundtrack
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/AMBIENCE.bank
   m_EditorClassIdentifier: 
   Path: event:/soundtrack
   Guid:
@@ -185,6 +205,15 @@ MonoBehaviour:
     Value: 1452
   Exists: 1
 --- !u!114 &2967048673164166543
+=======
+  Path: fmod_project/Build/Desktop/AMBIENCE.bank
+  Name: AMBIENCE
+  StudioPath: bank:/AMBIENCE
+  lastModified: 638794810932763112
+  FileSizes:
+  - Name: Desktop
+    Value: 506
+  Exists: 1
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: fmod_ngj2025/sleep2/Build/Desktop/Master.bank
+  Path: fmod_project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
   lastModified: 638794860136621085
@@ -396,7 +425,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
+  m_Name: bank:/MUSIC.bank
   m_EditorClassIdentifier: 
   Path: fmod_ngj2025/sleep2/Build/Desktop/SFX.bank
   Name: SFX
