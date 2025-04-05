@@ -21,17 +21,17 @@ MonoBehaviour:
     Path: 
   <screamAudio>k__BackingField:
     Guid:
-      Data1: -1452814062
-      Data2: 1259479584
-      Data3: 1986033834
-      Data4: -300098444
+      Data1: -584984455
+      Data2: 1151048436
+      Data3: 426964635
+      Data4: 1687181227
     Path: event:/spider_scream
   <deathAudio>k__BackingField:
     Guid:
-      Data1: 797850936
-      Data2: 1098173844
-      Data3: -379121508
-      Data4: 1965707004
+      Data1: -10862424
+      Data2: 1132096535
+      Data3: 1529156009
+      Data4: 1525860492
     Path: event:/spider_death
   enemyName: Test
   animator: {fileID: 9100000, guid: 4a2497ac72ff2684194913bd5f866313, type: 2}

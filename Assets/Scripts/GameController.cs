@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class GameController : MonoBehaviour
     
     public List<EnemySO> enemySOs;
     
-    public Transform spawnPoint;
-    public Transform targetPoint;
+    public List<Transform> spawnPoints;
+    public List<Transform> targetPoints;
     
-    public List<Enemy> enemies = new List<Enemy>();
+    internal List<Enemy> enemies = new List<Enemy>();
 
     [SerializeField] private int startPoints;
     internal int points = 0;
@@ -57,7 +58,7 @@ public class GameController : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            Enemy enemy = enemyFactory.CreateEnemy(enemySOs[0], spawnPoint, targetPoint, this);
+            Enemy enemy = enemyFactory.CreateEnemy(enemySOs[0], spawnPoints[Random.Range(0, spawnPoints.Count)], targetPoints[Random.Range(0, targetPoints.Count)], this);
             enemies.Add(enemy);
             await UniTask.Delay(1000, cancellationToken:destroyCancellationToken);
         }
