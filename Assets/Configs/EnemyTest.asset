@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a109cded7dc1147b9a5af358e48497, type: 3}
   m_Name: EnemyTest
   m_EditorClassIdentifier: 
-  enemyName: 
-  animator: {fileID: 0}
+  enemyName: Test
+  animator: {fileID: 9100000, guid: 4a2497ac72ff2684194913bd5f866313, type: 2}
   attributes:
-    health: 0
-    speed: 0
-    reward: 0
+    health: 1
+    speed: 3
+    reward: 1

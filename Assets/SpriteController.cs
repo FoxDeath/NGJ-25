@@ -20,7 +20,7 @@ public class SpriteController : MonoBehaviour
     void Update()
     {
         // Rotate the sprite to face the camera
-        Vector3 direction = mainCamera.transform.position - transform.position;
+        Vector3 direction = -mainCamera.transform.forward;
         direction.y = 0; // Keep the rotation on the Y axis
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.localPosition = Vector3.zero;
