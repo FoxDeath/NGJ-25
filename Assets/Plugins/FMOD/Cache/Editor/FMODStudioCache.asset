@@ -42,11 +42,38 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638794893840955596
+  lastModified: 638794928509419079
   FileSizes:
   - Name: Desktop
-    Value: 387392
+    Value: 175168
   Exists: 1
+--- !u!114 &-7704860884747546978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/enemy_hurt
+  m_EditorClassIdentifier: 
+  Path: event:/enemy_hurt
+  Guid:
+    Data1: -959657534
+    Data2: 1218108614
+    Data3: -1693333834
+    Data4: -1371860443
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7462207590370848234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +89,10 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/MUSIC.bank
   Name: MUSIC
   StudioPath: bank:/MUSIC
-  lastModified: 638794893416254965
+  lastModified: 638794915327787572
   FileSizes:
   - Name: Desktop
-    Value: 275488
+    Value: 274080
   Exists: 1
 --- !u!114 &-6166952263682960399
 MonoBehaviour:
@@ -136,7 +163,7 @@ MonoBehaviour:
   - {fileID: -7906920643114349076}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -222,61 +249,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2016354382887135469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/soundtrack_final
-  m_EditorClassIdentifier: 
-  Path: event:/soundtrack_final
-  Guid:
-    Data1: 1822220009
-    Data2: 1133366999
-    Data3: 664850324
-    Data4: -309891616
-  Banks:
-  - {fileID: -7462207590370848234}
-  - {fileID: -7906920643114349076}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 10000
-  Length: 22258
---- !u!114 &-1274517934515185082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/spider_scream
-  m_EditorClassIdentifier: 
-  Path: event:/spider_scream
-  Guid:
-    Data1: -1452814062
-    Data2: 1259479584
-    Data3: 1986033834
-    Data4: -300098444
-  Banks:
-  - {fileID: -7906920643114349076}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 900
-  Length: 0
 --- !u!114 &-1242557416438585779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,10 +291,10 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638794893840258640
+  lastModified: 638794928505551633
   FileSizes:
   - Name: Desktop
-    Value: 1500
+    Value: 1578
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -346,21 +318,50 @@ MonoBehaviour:
   - {fileID: -5227735976334810996}
   - {fileID: -2285568933998828748}
   - {fileID: -3669831236859794280}
-  - {fileID: -1274517934515185082}
   - {fileID: -2894889545250834251}
   - {fileID: 7486334812895913775}
   - {fileID: 7330288413108471634}
   - {fileID: -1242557416438585779}
   - {fileID: -8546565358487275404}
-  - {fileID: -2016354382887135469}
   - {fileID: -6166952263682960399}
+  - {fileID: -7704860884747546978}
+  - {fileID: 4567130004710837706}
+  - {fileID: 300748941181257850}
+  - {fileID: 8410794649069373784}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3260576198657691238}
   StringsBanks:
   - {fileID: -252537835568917559}
-  cacheTime: 638794893840955596
+  cacheTime: 638794928509419079
   cacheVersion: 131846
+--- !u!114 &300748941181257850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/button_pickup
+  m_EditorClassIdentifier: 
+  Path: event:/button_pickup
+  Guid:
+    Data1: 608400241
+    Data2: 1269688090
+    Data3: -789766259
+    Data4: -1594540152
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3260576198657691238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,11 +377,38 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638794893840248883
+  lastModified: 638794928505536293
   FileSizes:
   - Name: Desktop
     Value: 1524
   Exists: 1
+--- !u!114 &4567130004710837706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/dino_shot
+  m_EditorClassIdentifier: 
+  Path: event:/dino_shot
+  Guid:
+    Data1: 470643263
+    Data2: 1109330261
+    Data3: -187581291
+    Data4: -1255664197
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7330288413108471634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,10 +423,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/spider_death
   Guid:
-    Data1: 797850936
-    Data2: 1098173844
-    Data3: -379121508
-    Data4: 1965707004
+    Data1: -1452814062
+    Data2: 1259479584
+    Data3: 1986033834
+    Data4: -300098444
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
@@ -406,7 +434,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 900
   Length: 0
 --- !u!114 &7486334812895913775
 MonoBehaviour:
@@ -430,7 +458,34 @@ MonoBehaviour:
   - {fileID: -7906920643114349076}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8410794649069373784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/jerry_death
+  m_EditorClassIdentifier: 
+  Path: event:/jerry_death
+  Guid:
+    Data1: 922324474
+    Data2: 1335261227
+    Data3: -1662580812
+    Data4: -1056488014
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20

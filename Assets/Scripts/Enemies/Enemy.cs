@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
     {
 
         // audio
-        AudioManager.instance.PlayOneShot(this.enemySO.screamAudio, this.transform.position);
+        AudioManager.instance.PlayOneShot(this.enemySO.hurtAudio, this.transform.position);
         health -= damage;
         gameController.damageNumber.Spawn(transform.position, damage);
         DamagePlaceholderAnimation().Forget();
