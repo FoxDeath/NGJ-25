@@ -1,5 +1,7 @@
 using Unity.AI.Navigation;
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +11,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousePosition;
     
     private PlayerInput playerInput;
+
+    // audio
+    private EventInstance playerFootsteps;
     
     //TODO: TOWER STUFF
     [SerializeField] private SpriteRenderer heldTower;
@@ -30,6 +35,10 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._3.performed += ctx => SelectTower(2);
         playerInput.Player._4.performed += ctx => SelectTower(3);
         playerInput.Player._5.performed += ctx => SelectTower(4);
+
+        // playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.bunnyFootsteps);
+        // playerFootsteps.set3DAttributes(RuntimeUtils.To3DAttributes(Vector3.zero));
+
     }
 
     // Update is called once per frame
@@ -42,6 +51,9 @@ public class PlayerController : MonoBehaviour
 
         // Convert to world position
         RotateHeldTower();
+
+        // Audio stuff
+        // UpdateSound();
 
         CheckHeldTower();
     }
@@ -97,6 +109,27 @@ public class PlayerController : MonoBehaviour
                 break;
             default:
                 return;
+        }
+    }
+
+
+    private void UpdateSound()
+    {
+        // start footsteps event if the player has an x velocity and is on the ground
+        if (moveInput.x != 0)
+        {
+            // get the playback state
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+        }
+        // otherwise, stop the footsteps event
+        else 
+        {
+            playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 }
