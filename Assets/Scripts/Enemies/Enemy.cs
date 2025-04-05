@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 public class Enemy : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour
         
         health = attributes.health;
         
+        // AudioManager.instance.PlayOneShot(FMODEvents.instance.screa, this.transform.position);
         navMeshAgent.SetDestination(targetPoint.position);
         this.gameController = gameController;
         // Initialize other properties based on enemySO
@@ -42,12 +44,16 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
+        // audio
+        AudioManager.instance.PlayOneShot(this.enemySO.screamAudio, this.transform.position);
         health -= damage;
         gameController.damageNumber.Spawn(transform.position, damage);
         DamagePlaceholderAnimation().Forget();
         if (health <= 0)
         {
             Die();
+            AudioManager.instance.PlayOneShot(this.enemySO.deathAudio, this.transform.position);
         }
     }
     

@@ -6,6 +6,8 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     public TowerAttributes attributes;
+
+    public TowerSO towerSO;
     
     private float attackCooldown;
     
@@ -13,11 +15,12 @@ public class Tower : MonoBehaviour
 
     public void Initialize(TowerSO towerSO, Vector3 spawnPoint)
     {
+        this.towerSO = towerSO;
         // Initialize the tower with the provided TowerSO and spawn point
         transform.position = spawnPoint;
         attributes = towerSO.attributes;
         gameController = FindAnyObjectByType<GameController>();
-
+        AudioManager.instance.PlayOneShot(this.towerSO.placementAudio, this.transform.position);
         // Set other properties based on towerSO
     }
 
@@ -83,6 +86,9 @@ public class Tower : MonoBehaviour
                     SpriteRenderer spriteRenderer = projectile.AddComponent<SpriteRenderer>();
                     spriteRenderer.sprite = attributes.projectile;
                     projectile.AddComponent<Projectile>().Initialize(closestEnemy.transform, attributes.projectileSpeed);
+
+                    // Play shot audio
+                    AudioManager.instance.PlayOneShot(this.towerSO.shotAudio, this.transform.position);
                 }
             }
             
