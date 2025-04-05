@@ -19,4 +19,7 @@ public class TowerAttributes
     public float attackRange;
     public float attackSpeed;
     public int damage;
+
+    public Sprite projectile;
+    public float projectileSpeed;
 }

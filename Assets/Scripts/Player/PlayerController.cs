@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private List<TowerSO> towerConfigs;
     private TowerSO currentTowerConfig;
     
-    [SerializeField] private NavMeshSurface navMeshSurface;
     private bool canPlaceTower;
     private int selectedTower;
     private Camera mainCamera;
@@ -28,6 +27,7 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        selectedTower = -1;
         towerFactory = new TowerFactory();
         
         mainCamera = Camera.main;
@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._3.performed += ctx => SelectTower(2);
         playerInput.Player._4.performed += ctx => SelectTower(3);
         playerInput.Player._5.performed += ctx => SelectTower(4);
+        
+        playerInput.Player.PlaceTower.performed += ctx => PlaceTower();
     }
 
     // Update is called once per frame
@@ -77,6 +79,18 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    
+    private void PlaceTower()
+    {
+        if (canPlaceTower)
+        {
+            // Create the tower at the held position
+            towerFactory.CreateTower(currentTowerConfig, heldTower.transform.position);
+            currentTowerConfig = null;
+            heldTower.sprite = null;
+            selectedTower = -1;
+        }
+    }
 
     private void RotateHeldTower()
     {
@@ -103,6 +117,7 @@ public class PlayerController : MonoBehaviour
             currentTowerConfig = null;
             heldTower.sprite = null;
             selectedTower = -1;
+            canPlaceTower = false;
             return;
         }
         

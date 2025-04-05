@@ -1,19 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
     public TowerAttributes attributes;
-    internal List<Enemy> enemiesInRange = new List<Enemy>();
     
     private float attackCooldown;
     
+    GameController gameController;
+
     public void Initialize(TowerSO towerSO, Vector3 spawnPoint)
     {
         // Initialize the tower with the provided TowerSO and spawn point
         transform.position = spawnPoint;
         attributes = towerSO.attributes;
+        gameController = FindAnyObjectByType<GameController>();
+
         // Set other properties based on towerSO
     }
 
@@ -31,32 +35,25 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Attack()
     {
-        if (other.CompareTag("Enemy"))
+        if(!gameController || gameController.enemies.Count == 0)
         {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null && !enemiesInRange.Contains(enemy))
+            return;
+        }
+        
+        // Check if there are any enemies in range
+        List<Enemy> enemiesInRange = new List<Enemy>();
+        
+        foreach (var enemy in gameController.enemies)
+        {
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distance <= attributes.attackRange)
             {
                 enemiesInRange.Add(enemy);
             }
         }
-    }
-    
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null && enemiesInRange.Contains(enemy))
-            {
-                enemiesInRange.Remove(enemy);
-            }
-        }
-    }
-
-    public void Attack()
-    {
+        
         // Implement attack logic
         if (enemiesInRange.Count > 0)
         {
@@ -76,7 +73,17 @@ public class Tower : MonoBehaviour
 
             if(closestEnemy != null)
             {
-                closestEnemy.TakeDamage(attributes.damage, this);
+                closestEnemy.TakeDamage(attributes.damage);
+                
+                if(attributes.projectile != null)
+                {
+                    // Instantiate projectile and set its target to the closest enemy
+                    GameObject projectile = new GameObject(gameObject.name+ " Projectile");
+                    projectile.transform.position = transform.position;
+                    SpriteRenderer spriteRenderer = projectile.AddComponent<SpriteRenderer>();
+                    spriteRenderer.sprite = attributes.projectile;
+                    projectile.AddComponent<Projectile>().Initialize(closestEnemy.transform, attributes.projectileSpeed);
+                }
             }
             
             // Attack the closest enemy
