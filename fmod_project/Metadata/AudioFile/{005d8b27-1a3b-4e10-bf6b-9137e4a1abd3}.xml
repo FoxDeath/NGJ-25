@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{005d8b27-1a3b-4e10-bf6b-9137e4a1abd3}">
+		<property name="assetPath">
+			<value>monsters/SPIDER_step_4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.12696145124716554</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{36708079-78c8-4bd7-919b-c771d4bbf2b6}</destination>
+		</relationship>
+	</object>
+</objects>
