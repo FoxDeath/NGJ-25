@@ -30,7 +30,7 @@ MonoBehaviour:
       Data4: -1900879224
     Path: event:/toy_soldier_placement
   attributes:
-    cost: 0
+    cost: 1
     attackRange: 10
     attackSpeed: 1
     damage: 1
