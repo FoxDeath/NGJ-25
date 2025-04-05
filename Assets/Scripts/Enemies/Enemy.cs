@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 public class Enemy : MonoBehaviour
 {
@@ -20,10 +21,14 @@ public class Enemy : MonoBehaviour
         
         navMeshAgent.SetDestination(targetPoint.position);
         
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.spiderScream, this.transform.position);
         // Initialize other properties based on enemySO
     }
 
     public void Move()
     {
+
+        // audio
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.spiderScream, this.transform.position);
     }
 }
