@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 7822352900054580355}
   - component: {fileID: 6336821915380823542}
   - component: {fileID: 6889842378809722807}
+  - component: {fileID: 726885360446272160}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -828,6 +829,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!210 &726885360446272160
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562540017389001573}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 1
 --- !u!1 &7749901591627642477
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,8 +979,6 @@ MonoBehaviour:
   speed: 15
   heldTower: {fileID: 6382965385189535303}
   towerConfigs:
-  - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
-  - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
   - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
   - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
   - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
