@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{430f2b46-22ec-4ac1-9f98-28930b4352f2}">
+		<property name="assetPath">
+			<value>menu/hp_loss.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.2673696145124715</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{36708079-78c8-4bd7-919b-c771d4bbf2b6}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b7755161-61ee-4860-8a99-7a48150a7663}">
+		<property name="assetPath">
+			<value>buildings/toy_soldier_shoot.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.13975056689342405</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{36708079-78c8-4bd7-919b-c771d4bbf2b6}</destination>
+		</relationship>
+	</object>
+</objects>
