@@ -42,6 +42,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BunnyBack
+    uniqueID: 3657653103
+    locked: 0
+  - name: BunnyMiddle
+    uniqueID: 1050403333
+    locked: 0
+  - name: BunnyFront
+    uniqueID: 2487206965
+    locked: 0
+  - name: BunnyFront2
+    uniqueID: 4011248457
+    locked: 0
+  - name: BunnyFront3
+    uniqueID: 2246616907
+    locked: 0
+  - name: Bunnyfront4
+    uniqueID: 1869206187
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
