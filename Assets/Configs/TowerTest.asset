@@ -17,18 +17,18 @@ MonoBehaviour:
   animator: {fileID: 0}
   <shotAudio>k__BackingField:
     Guid:
-      Data1: -1294736184
-      Data2: 1175162663
-      Data3: 1353104783
-      Data4: 1036114659
+      Data1: -647033020
+      Data2: 1314272910
+      Data3: 1107944632
+      Data4: 1025634698
     Path: event:/toy_soldier_shoot
   <placementAudio>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 746450578
+      Data2: 1227690748
+      Data3: 892365959
+      Data4: -1900879224
+    Path: event:/toy_soldier_placement
   attributes:
     cost: 1
     attackRange: 10
