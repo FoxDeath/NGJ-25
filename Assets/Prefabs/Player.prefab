@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4279414322077653588}
   - component: {fileID: 6382965385189535303}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeldTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3464051589322216351}
   - component: {fileID: 6991777649308924264}
-  m_Layer: 0
+  - component: {fileID: 863492702110849527}
+  - component: {fileID: 1540932221772342414}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +136,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  towerPrefab: {fileID: 0}
+  heldTower: {fileID: 6382965385189535303}
+  towerConfigs:
+  - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
+  - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
+  - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
+  - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
+  - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
+--- !u!135 &863492702110849527
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784366022070150900}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!54 &1540932221772342414
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784366022070150900}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8746804439841382803
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +202,7 @@ GameObject:
   - component: {fileID: 8868554827219763219}
   - component: {fileID: 6713858330680056347}
   - component: {fileID: 7563033457183481294}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

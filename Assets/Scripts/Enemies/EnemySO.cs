@@ -17,4 +17,5 @@ public class EnemyAttributes
     public int health;
     public float speed;
     public int reward;
+    public int damage;
 }

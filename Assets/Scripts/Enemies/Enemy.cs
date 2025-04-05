@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public EnemySO enemySO;
     private Animator animator;
-    private EnemyAttributes attributes;
+    internal EnemyAttributes attributes;
     private NavMeshAgent navMeshAgent;
     private GameController gameController;
     
@@ -14,6 +15,16 @@ public class Enemy : MonoBehaviour
     private Transform targetPoint;
     
     private int health;
+
+    private void Update()
+    {
+        if(Vector3.Distance(transform.position, targetPoint.position) < 5f)
+        {
+            // Handle enemy reaching the target point
+            // e.g., damage player, etc.
+            gameController.TakeDamage(this);
+        }
+    }
 
     public void Initialize(EnemySO enemySO, NavMeshAgent navMeshAgent, Transform spawnPoint, Transform targetPoint, GameController gameController)
     {
@@ -32,6 +43,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        gameController.damageNumber.Spawn(transform.position, damage);
         DamagePlaceholderAnimation().Forget();
         if (health <= 0)
         {
@@ -41,11 +53,7 @@ public class Enemy : MonoBehaviour
     
     private void Die()
     {
-        gameController.enemies.Remove(this);
-        // Handle enemy death
-        Destroy(gameObject);
-        // Give reward to player
-        // tower.GiveReward(attributes.reward);
+        gameController.KillEnemy(this);
     }
 
     private async UniTask DamagePlaceholderAnimation()
