@@ -15,6 +15,20 @@ MonoBehaviour:
   towerName: Tower Test
   towerSprite: {fileID: 21300000, guid: 9f143d8fcafd5f34eaac453ab24c7a4d, type: 3}
   animator: {fileID: 0}
+  <shotAudio>k__BackingField:
+    Guid:
+      Data1: -647033020
+      Data2: 1314272910
+      Data3: 1107944632
+      Data4: 1025634698
+    Path: event:/toy_soldier_shoot
+  <placementAudio>k__BackingField:
+    Guid:
+      Data1: 746450578
+      Data2: 1227690748
+      Data3: 892365959
+      Data4: -1900879224
+    Path: event:/toy_soldier_placement
   attributes:
     cost: 0
     attackRange: 10

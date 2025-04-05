@@ -13,11 +13,6 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference bunnyFootsteps { get; private set; }
 
 
-    [field: Header("Enemy SFX")]
-    [field: SerializeField] public EventReference toySoldiersShot { get; private set; } 
-    [field: SerializeField] public EventReference spiderSteps { get; private set; }
-    [field: SerializeField] public EventReference spiderScream { get; private set; }
-    [field: SerializeField] public EventReference spiderDeath { get; private set; }
     
     [field: Header("UI SFX")]
     [field: SerializeField] public EventReference hpLoss { get; private set; }

@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._5.performed += ctx => SelectTower(4);
         
         playerInput.Player.PlaceTower.performed += ctx => PlaceTower();
+
     }
 
     // Update is called once per frame

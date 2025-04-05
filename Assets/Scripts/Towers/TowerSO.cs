@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using FMODUnity;
 
 [CreateAssetMenu(fileName = "Tower", menuName = "ScriptableObjects/TowerSO", order = 1)]
 public class TowerSO : ScriptableObject
@@ -7,6 +8,9 @@ public class TowerSO : ScriptableObject
     public string towerName;
     public Sprite towerSprite;
     public RuntimeAnimatorController animator;
+
+    [field: SerializeField] public EventReference shotAudio { get; private set; } 
+    [field: SerializeField] public EventReference placementAudio { get; private set; } 
     
     [SerializeField]
     public TowerAttributes attributes;

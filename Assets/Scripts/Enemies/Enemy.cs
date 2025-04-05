@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         
         health = attributes.health;
         
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.spiderScream, this.transform.position);
+        // AudioManager.instance.PlayOneShot(FMODEvents.instance.screa, this.transform.position);
         navMeshAgent.SetDestination(targetPoint.position);
         this.gameController = gameController;
         // Initialize other properties based on enemySO
@@ -35,12 +35,13 @@ public class Enemy : MonoBehaviour
     {
 
         // audio
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.spiderScream, this.transform.position);
+        AudioManager.instance.PlayOneShot(this.enemySO.screamAudio, this.transform.position);
         health -= damage;
         DamagePlaceholderAnimation().Forget();
         if (health <= 0)
         {
             Die();
+            AudioManager.instance.PlayOneShot(this.enemySO.deathAudio, this.transform.position);
         }
     }
     

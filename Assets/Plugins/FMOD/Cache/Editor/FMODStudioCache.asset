@@ -96,10 +96,10 @@ MonoBehaviour:
   - {fileID: 8309656777790805819}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 900
   Length: 0
 --- !u!114 &-6476239583372578257
 MonoBehaviour:
@@ -156,12 +156,13 @@ MonoBehaviour:
   - {fileID: -8138463553677153292}
   - {fileID: 2967048673164166543}
   - {fileID: 4867793251182445085}
+  - {fileID: 5950717369075266315}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3609072927539956651}
   StringsBanks:
   - {fileID: 950949240455857198}
-  cacheTime: 638794818844629955
+  cacheTime: 638794876411921430
   cacheVersion: 131846
 --- !u!114 &950949240455857198
 MonoBehaviour:
@@ -178,10 +179,10 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638794683472403067
+  lastModified: 638794860136629805
   FileSizes:
   - Name: Desktop
-    Value: 1400
+    Value: 1452
   Exists: 1
 --- !u!114 &2967048673164166543
 MonoBehaviour:
@@ -225,7 +226,7 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638794683472398845
+  lastModified: 638794860136621085
   FileSizes:
   - Name: Desktop
     Value: 1524
@@ -326,11 +327,38 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/MUSIC.bank
   Name: MUSIC
   StudioPath: bank:/MUSIC
-  lastModified: 638794818844629955
+  lastModified: 638794824919144907
   FileSizes:
   - Name: Desktop
     Value: 274080
   Exists: 1
+--- !u!114 &5950717369075266315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/toy_soldier_placement
+  m_EditorClassIdentifier: 
+  Path: event:/toy_soldier_placement
+  Guid:
+    Data1: 746450578
+    Data2: 1227690748
+    Data3: 892365959
+    Data4: -1900879224
+  Banks:
+  - {fileID: 8309656777790805819}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8070325106354723904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,8 +401,8 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638794731603643653
+  lastModified: 638794876411921430
   FileSizes:
   - Name: Desktop
-    Value: 85344
+    Value: 113984
   Exists: 1
