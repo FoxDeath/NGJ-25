@@ -1,5 +1,6 @@
 using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer heldTower;
     [SerializeField] private Sprite towerPrefab;
     [SerializeField] private NavMeshSurface navMeshSurface;
-
+    private bool canPlaceTower;
     private int selectedTower;
     private Camera mainCamera;
 
@@ -43,12 +44,30 @@ public class PlayerController : MonoBehaviour
         // Convert to world position
         RotateHeldTower();
 
-        CheckHeldTower();
+        if(selectedTower != -1)
+            CheckHeldTower();
     }
 
     private void CheckHeldTower()
     {
-        
+        string areaName = "Walkable";
+        var targetAreaMask = 1 << NavMesh.GetAreaFromName(areaName);
+        if (NavMesh.SamplePosition(heldTower.transform.position, out NavMeshHit navMeshHit, 5f, NavMesh.AllAreas))
+        {
+            int areaIndex = navMeshHit.mask;
+
+            // Compare the area
+            if ((areaIndex & targetAreaMask) != 0)
+            {
+                heldTower.color = Color.red;
+                canPlaceTower = false;
+            }
+            else
+            {
+                heldTower.color = Color.white;
+                canPlaceTower = true;
+            }
+        }
     }
 
     private void RotateHeldTower()
@@ -60,7 +79,7 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = (pointerWorldPos - transform.position).normalized;
 
         // Position the object at fixed distance in that direction
-        heldTower.transform.position = new Vector3(transform.position.x + direction.x * 3, transform.position.y, transform.position.z + direction.y * 3);
+        heldTower.transform.position = new Vector3(transform.position.x + direction.x * 6, transform.position.y, transform.position.z + direction.y * 6);
     }
 
     private void Move(Vector2 direction)
