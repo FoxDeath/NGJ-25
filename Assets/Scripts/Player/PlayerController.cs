@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Sprite towerPrefab;
     [SerializeField] private NavMeshSurface navMeshSurface;
     private bool canPlaceTower;
-
     private int selectedTower;
     private Camera mainCamera;
 
