@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
         GameObject buttonDrop = Instantiate(buttonDropPrefab, enemy.transform.position + new Vector3(0f, 2f, 0f), Quaternion.identity);
         buttonDrop.GetComponent<ButtonDrop>().SetValue(enemy.attributes.reward);
         
-        Destroy(enemy.gameObject);
+        Destroy(enemy.gameObject, 3f);
     }
     
     public void TakeDamage(Enemy enemy)

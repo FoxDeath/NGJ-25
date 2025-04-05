@@ -48,9 +48,13 @@ MonoBehaviour:
   damageNumber: {fileID: 6146380392257504735, guid: 04f3d4947dc5bf64da23ae175eb9d3f2, type: 3}
   damageNumberBig: {fileID: 5626256408664991587, guid: 44bc002073f34a9468f2b0b3bdf64ba1, type: 3}
   enemySOs:
-  - {fileID: 11400000, guid: d04256043bca34a4694f48f5b3a201ab, type: 2}
-  spawnPoints: []
-  targetPoints: []
+  - {fileID: 11400000, guid: 7919ba1de5a52d446b5da74e5a4ae5f2, type: 2}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  targetPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   startPoints: 5
   buttonDropPrefab: {fileID: 5584314643020251422, guid: 7309289d61d31b741952267922667309, type: 3}
   pointsText: {fileID: 0}
