@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
+using FMOD.Studio;
 using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
@@ -13,6 +14,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousePosition;
     
     private PlayerInput playerInput;
+
+    // audio
+    private EventInstance playerFootsteps;
     
     //TODO: TOWER STUFF
     [SerializeField] private SpriteRenderer heldTower;
@@ -42,6 +46,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._5.performed += ctx => SelectTower(4);
         
         playerInput.Player.PlaceTower.performed += ctx => PlaceTower();
+
     }
 
     // Update is called once per frame
@@ -126,5 +131,26 @@ public class PlayerController : MonoBehaviour
         
         currentTowerConfig = towerConfigs[selectedTower];
         heldTower.sprite = currentTowerConfig.towerSprite;
+    }
+
+
+    private void UpdateSound()
+    {
+        // start footsteps event if the player has an x velocity and is on the ground
+        if (moveInput.x != 0)
+        {
+            // get the playback state
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+        }
+        // otherwise, stop the footsteps event
+        else 
+        {
+            playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
     }
 }
