@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    private TowerFactory towerFactory;
+    private GameController gameController;
     
     [SerializeField] private float speed = 5f;
 
@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         selectedTower = -1;
-        towerFactory = new TowerFactory();
+        
+        gameController = FindAnyObjectByType<GameController>();
         
         mainCamera = Camera.main;
         playerInput = new PlayerInput();
@@ -82,10 +83,10 @@ public class PlayerController : MonoBehaviour
     
     private void PlaceTower()
     {
-        if (canPlaceTower)
+        if (canPlaceTower && currentTowerConfig)
         {
             // Create the tower at the held position
-            towerFactory.CreateTower(currentTowerConfig, heldTower.transform.position);
+            gameController.SpawnTower(currentTowerConfig, heldTower.transform.position);
             currentTowerConfig = null;
             heldTower.sprite = null;
             selectedTower = -1;
