@@ -15,6 +15,6 @@ MonoBehaviour:
   enemyName: Test
   animator: {fileID: 9100000, guid: 4a2497ac72ff2684194913bd5f866313, type: 2}
   attributes:
-    health: 1
+    health: 5
     speed: 3
     reward: 1

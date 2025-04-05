@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
 using FMOD.Studio;
@@ -5,6 +6,8 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    private TowerFactory towerFactory;
+    
     [SerializeField] private float speed = 5f;
 
     private Vector2 moveInput;
@@ -17,8 +20,10 @@ public class PlayerController : MonoBehaviour
     
     //TODO: TOWER STUFF
     [SerializeField] private SpriteRenderer heldTower;
-    [SerializeField] private Sprite towerPrefab;
-    [SerializeField] private NavMeshSurface navMeshSurface;
+    
+    [SerializeField] private List<TowerSO> towerConfigs;
+    private TowerSO currentTowerConfig;
+    
     private bool canPlaceTower;
     private int selectedTower;
     private Camera mainCamera;
@@ -26,6 +31,9 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        selectedTower = -1;
+        towerFactory = new TowerFactory();
+        
         mainCamera = Camera.main;
         playerInput = new PlayerInput();
         playerInput.Player.Enable();
@@ -35,10 +43,8 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._3.performed += ctx => SelectTower(2);
         playerInput.Player._4.performed += ctx => SelectTower(3);
         playerInput.Player._5.performed += ctx => SelectTower(4);
-
-        // playerFootsteps = AudioManager.instance.CreateInstance(FMODEvents.instance.bunnyFootsteps);
-        // playerFootsteps.set3DAttributes(RuntimeUtils.To3DAttributes(Vector3.zero));
-
+        
+        playerInput.Player.PlaceTower.performed += ctx => PlaceTower();
     }
 
     // Update is called once per frame
@@ -77,6 +83,18 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    
+    private void PlaceTower()
+    {
+        if (canPlaceTower)
+        {
+            // Create the tower at the held position
+            towerFactory.CreateTower(currentTowerConfig, heldTower.transform.position);
+            currentTowerConfig = null;
+            heldTower.sprite = null;
+            selectedTower = -1;
+        }
+    }
 
     private void RotateHeldTower()
     {
@@ -100,31 +118,17 @@ public class PlayerController : MonoBehaviour
     {
         if(i == selectedTower)
         {
+            currentTowerConfig = null;
             heldTower.sprite = null;
             selectedTower = -1;
+            canPlaceTower = false;
             return;
         }
         
         selectedTower = i;
         
-        Debug.Log("Selected tower: " + selectedTower);
-
-        switch(selectedTower)
-        {
-            case 0:
-                heldTower.sprite = towerPrefab;
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break; 
-            case 4:
-                break;
-            default:
-                return;
-        }
+        currentTowerConfig = towerConfigs[selectedTower];
+        heldTower.sprite = currentTowerConfig.towerSprite;
     }
 
 
