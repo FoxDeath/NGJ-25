@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private TowerFactory towerFactory;
+    
     [SerializeField] private float speed = 5f;
 
     private Vector2 moveInput;
@@ -12,7 +15,10 @@ public class PlayerController : MonoBehaviour
     
     //TODO: TOWER STUFF
     [SerializeField] private SpriteRenderer heldTower;
-    [SerializeField] private Sprite towerPrefab;
+    
+    [SerializeField] private List<TowerSO> towerConfigs;
+    private TowerSO currentTowerConfig;
+    
     [SerializeField] private NavMeshSurface navMeshSurface;
 
     private int selectedTower;
@@ -21,6 +27,8 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        towerFactory = new TowerFactory();
+        
         mainCamera = Camera.main;
         playerInput = new PlayerInput();
         playerInput.Player.Enable();
@@ -73,6 +81,7 @@ public class PlayerController : MonoBehaviour
     {
         if(i == selectedTower)
         {
+            currentTowerConfig = null;
             heldTower.sprite = null;
             selectedTower = -1;
             return;
@@ -80,23 +89,7 @@ public class PlayerController : MonoBehaviour
         
         selectedTower = i;
         
-        Debug.Log("Selected tower: " + selectedTower);
-
-        switch(selectedTower)
-        {
-            case 0:
-                heldTower.sprite = towerPrefab;
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break; 
-            case 4:
-                break;
-            default:
-                return;
-        }
+        currentTowerConfig = towerConfigs[selectedTower];
+        heldTower.sprite = currentTowerConfig.towerSprite;
     }
 }

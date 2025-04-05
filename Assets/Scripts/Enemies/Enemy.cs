@@ -23,7 +23,21 @@ public class Enemy : MonoBehaviour
         // Initialize other properties based on enemySO
     }
 
-    public void Move()
+    public void TakeDamage(int damage, Tower tower)
     {
+        attributes.health -= damage;
+        if (attributes.health <= 0)
+        {
+            Die(tower);
+        }
+    }
+    
+    private void Die(Tower tower)
+    {
+        tower.enemiesInRange.Remove(this);
+        // Handle enemy death
+        Destroy(gameObject);
+        // Give reward to player
+        // tower.GiveReward(attributes.reward);
     }
 }
