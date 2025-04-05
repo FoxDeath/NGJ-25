@@ -57,7 +57,17 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._5.performed += ctx => SelectTower(4);
         
         playerInput.Player.PlaceTower.performed += ctx => PlaceTower();
-
+        
+        playerInput.Player.Escape.performed += ctx => gameController.PauseGame();
+    }
+    
+    private void OnDestroy()
+    {
+        playerInput.Player.Disable();
+        playerInput.Dispose();
+        
+        playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        playerFootsteps.release();
     }
 
     // Update is called once per frame
