@@ -23,6 +23,6 @@ MonoBehaviour:
     amount: 10
   spawnDelay: 1
   spawnDelayVariance: 0.2
-  timeDifficultyUp: 20
-  timeDifficultyDown: 40
+  timeDifficultyUp: 40
+  timeDifficultyDown: 50
   timeMax: 60

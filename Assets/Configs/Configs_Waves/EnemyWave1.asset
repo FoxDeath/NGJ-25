@@ -13,16 +13,20 @@ MonoBehaviour:
   m_Name: EnemyWave1
   m_EditorClassIdentifier: 
   enemiesToSpawn:
+  - enemy: {fileID: 11400000, guid: 7919ba1de5a52d446b5da74e5a4ae5f2, type: 2}
+    spawnDelay: 1
+    spawnDelayVariance: 0.2
+    amount: 6
   - enemy: {fileID: 11400000, guid: 97411d3a8bf601943a1e6d1787b76294, type: 2}
     spawnDelay: 0.2
     spawnDelayVariance: 0.2
     amount: 1
   - enemy: {fileID: 11400000, guid: 7919ba1de5a52d446b5da74e5a4ae5f2, type: 2}
     spawnDelay: 1
-    spawnDelayVariance: 0.2
-    amount: 12
+    spawnDelayVariance: 0.3
+    amount: 8
   spawnDelay: 1
   spawnDelayVariance: 0.2
-  timeDifficultyUp: 20
-  timeDifficultyDown: 40
-  timeMax: 60
+  timeDifficultyUp: 50
+  timeDifficultyDown: 60
+  timeMax: 70
