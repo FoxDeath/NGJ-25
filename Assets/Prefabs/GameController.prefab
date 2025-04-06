@@ -50,6 +50,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   targetPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -60,12 +61,11 @@ MonoBehaviour:
   healthText: {fileID: 0}
   maxHealth: 100
   wave1: {fileID: 11400000, guid: e3c81f1bd0892bf45861a4e90917a0da, type: 2}
-  wave2: {fileID: 0}
   enemyWaves:
   - {fileID: 11400000, guid: 651e8991b97fefc42bbc38dfabc25ecf, type: 2}
   - {fileID: 11400000, guid: 591d9834b4ebaaa47bfdd38688e36075, type: 2}
   - {fileID: 11400000, guid: 26b9e515a0d3d6048951d2825fdeca17, type: 2}
-  maxTime: 120
+  maxTime: 180
   timerText: {fileID: 0}
   hudCanvas: {fileID: 0}
   gameOverCanvas: {fileID: 0}
