@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log(name);
 
         // audio
         AudioManager.instance.PlayOneShot(this.enemySO.hurtAudio, this.transform.position);
@@ -73,7 +74,8 @@ public class Enemy : MonoBehaviour
     {
         for(int i = 0; i < 5; i++)
         {
-            gameController.enemyFactory.CreateEnemy(enemySO.littleJerry, transform, targetPoint, gameController);
+            var lilJer = gameController.enemyFactory.CreateEnemy(enemySO.littleJerry, transform, targetPoint, gameController);
+            gameController.enemies.Add(lilJer);
             
             await UniTask.Delay(100, cancellationToken: destroyCancellationToken);
         }

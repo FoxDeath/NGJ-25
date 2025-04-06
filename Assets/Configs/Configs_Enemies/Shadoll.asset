@@ -35,7 +35,7 @@ MonoBehaviour:
     Path: event:/shadoll_death
   enemyName: Shadoll
   sprite: {fileID: 1185736695788685524, guid: 681e4b11d7fcbf440970c1f7baa1e54c, type: 3}
-  spriteOffset: {x: 0, y: 5.5, z: 0}
+  spriteOffset: {x: 0, y: 3, z: 0}
   attributes:
     health: 5
     speed: 5
