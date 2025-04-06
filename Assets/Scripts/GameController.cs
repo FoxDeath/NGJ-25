@@ -31,10 +31,10 @@ public class GameController : MonoBehaviour
     [SerializeField] TextMeshProUGUI pointsText;
 
     [SerializeField] private Slider healthBar;
-    [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
     
+    [SerializeField] private EnemyWaveSO wave1;
     [SerializeField] private List<EnemyWaveSO> enemyWaves;
     private int currentWaveIndex = 0;
     private float currentWaveTime = 0f;
@@ -65,13 +65,12 @@ public class GameController : MonoBehaviour
         
         currentTime = maxTime;
         
-        SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+        SpwanWaveScripted1(wave1).Forget();
     }
 
     private void Update()
     {
         pointsText.text = points.ToString();
-        healthText.text = currentHealth.ToString();
         healthBar.value = (float)currentHealth / maxHealth;
         
         currentWaveTime += Time.deltaTime;
@@ -80,14 +79,20 @@ public class GameController : MonoBehaviour
 
         if(currentTime > 0f)
         {
-            timerText.text = currentTime.ToString("0.00");
+            timerText.text = currentTime.ToString("0");
         }
-        else
+        else if(currentTime < 0f)
         {
-            timerText.text = "0.00";
+            timerText.text = "0";
             currentTime = 0f;
             
             gameEnded = true;
+
+            if(enemies.Count > 0)
+            {
+                return;
+            }
+            
             hudCanvas.SetActive(false);
             winCanvas.SetActive(true);
             Time.timeScale = 0f;
@@ -102,7 +107,7 @@ public class GameController : MonoBehaviour
                 currentWaveIndex = 0;
             }
             
-            SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+            SpawnWaveNormal(enemyWaves[currentWaveIndex]).Forget();
             
             return;
         }
@@ -118,7 +123,7 @@ public class GameController : MonoBehaviour
                     currentWaveIndex = enemyWaves.Count - 1;
                 }
                 
-                SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+                SpawnWaveNormal(enemyWaves[currentWaveIndex]).Forget();
             }
             else if(currentWaveTime > enemyWaves[currentWaveIndex].timeDifficultyDown)
             {
@@ -129,18 +134,18 @@ public class GameController : MonoBehaviour
                     currentWaveIndex = 0;
                 }
                 
-                SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+                SpawnWaveNormal(enemyWaves[currentWaveIndex]).Forget();
             }
             else
             {
                 currentWaveTime = 0f;
                 
-                SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+                SpawnWaveNormal(enemyWaves[currentWaveIndex]).Forget();
             }
         }
     }
-
-    private async UniTask SpawnWave(EnemyWaveSO waveSo)
+    
+    private async UniTask SpwanWaveScripted1(EnemyWaveSO waveSo)
     {
         currentWaveTime = 0f;
         
@@ -148,6 +153,29 @@ public class GameController : MonoBehaviour
         {
             for (int i = 0; i < enemiesToSpawn.amount; i++)
             {
+                Enemy enemy = enemyFactory.CreateEnemy(enemiesToSpawn.enemy, spawnPoints[0], targetPoints[0], this);
+                enemies.Add(enemy);
+                
+                await UniTask.Delay((int)((enemiesToSpawn.spawnDelay + Random.Range(-enemiesToSpawn.spawnDelayVariance, enemiesToSpawn.spawnDelayVariance)) * 1000), cancellationToken:destroyCancellationToken);
+            }
+            
+            await UniTask.Delay((int)((waveSo.spawnDelay + Random.Range(-waveSo.spawnDelayVariance, enemiesToSpawn.spawnDelayVariance)) * 1000), cancellationToken:destroyCancellationToken);
+        }
+    }
+    
+    private async UniTask SpawnWaveNormal(EnemyWaveSO waveSo)
+    {
+        currentWaveTime = 0f;
+        
+        foreach(var enemiesToSpawn in waveSo.enemiesToSpawn)
+        {
+            for (int i = 0; i < enemiesToSpawn.amount; i++)
+            {
+                if(gameEnded)
+                {
+                    return;
+                }
+                
                 Enemy enemy = enemyFactory.CreateEnemy(enemiesToSpawn.enemy, spawnPoints[Random.Range(0, spawnPoints.Count)], targetPoints[Random.Range(0, targetPoints.Count)], this);
                 enemies.Add(enemy);
                 

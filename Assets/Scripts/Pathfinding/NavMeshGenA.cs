@@ -7,7 +7,7 @@ IF THIS IS STILL TO SLOW:
 - Adjust step to 2, 5, 10 or something higher
 */
 
-
+#if UNITY_EDITOR
 using Sirenix.OdinInspector;
 using System;
 using System.Collections;
@@ -250,3 +250,4 @@ escape:
     }
    
 }
+#endif
