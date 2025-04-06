@@ -89,8 +89,6 @@ public class Tower : MonoBehaviour
 
             if(closestEnemy != null)
             {
-                closestEnemy.TakeDamage(attributes.damage);
-                
                 animator.SetTrigger(Attack1);
                 
                 if(spriteTransform)
@@ -104,9 +102,19 @@ public class Tower : MonoBehaviour
                         spriteTransform.localScale = spriteTransformLocalScale;
                     }
                 }
-                
-                if(attributes.projectile != null)
+
+                if(towerSO.towerType == TowerType.AOENormal)
                 {
+                    // Implement AOE attack logic here
+                    foreach (var enemy in enemiesInRange)
+                    {
+                        enemy.TakeDamage(attributes.damage);
+                    }
+                }
+                else if(towerSO.towerType == TowerType.Projectile)
+                {
+                    closestEnemy.TakeDamage(attributes.damage);
+
                     // Instantiate projectile and set its target to the closest enemy
                     GameObject projectile = new GameObject(gameObject.name+ " Projectile");
                     projectile.transform.position = transform.position;
@@ -116,6 +124,29 @@ public class Tower : MonoBehaviour
 
                     // Play shot audio
                     AudioManager.instance.PlayOneShot(this.towerSO.shotAudio, this.transform.position);
+                }
+                else if(towerSO.towerType == TowerType.Laser)
+                {
+                    // Implement laser attack logic here
+                    closestEnemy.TakeDamage(attributes.damage);
+                }
+                else if(towerSO.towerType == TowerType.AOEOnPoint)
+                {
+                    closestEnemy.TakeDamage(attributes.damage);
+        
+                    foreach (var enemy in gameController.enemies)
+                    {
+                        if(enemy == closestEnemy)
+                        {
+                            continue;
+                        }
+                        
+                        float distance = Vector3.Distance(closestEnemy.transform.position, enemy.transform.position);
+                        if(distance <= 5f)
+                        {
+                            enemy.TakeDamage(Mathf.RoundToInt(attributes.damage / 2f));
+                        }
+                    }    
                 }
             }
             

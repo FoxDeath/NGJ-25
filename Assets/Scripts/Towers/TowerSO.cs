@@ -5,6 +5,7 @@ using FMODUnity;
 [CreateAssetMenu(fileName = "Tower", menuName = "ScriptableObjects/TowerSO", order = 1)]
 public class TowerSO : ScriptableObject
 {
+    public TowerType towerType;
     public string towerName;
     public Sprite towerSprite;
     public GameObject sprite;
@@ -27,4 +28,12 @@ public class TowerAttributes
 
     public Sprite projectile;
     public float projectileSpeed;
+}
+
+public enum TowerType
+{
+    Projectile,
+    AOEOnPoint,
+    AOENormal,
+    Laser
 }

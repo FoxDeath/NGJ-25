@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec975b37e28f7443b8083c89a47d92a, type: 3}
   m_Name: NutCracker
   m_EditorClassIdentifier: 
+  towerType: 1
   towerName: Nut Cracker
   towerSprite: {fileID: 21300000, guid: 446855013ec6da94ab38ae6fdb71e972, type: 3}
   sprite: {fileID: 2536365587462017149, guid: c96cd2cfa93389f429713c8d9be8c7ff, type: 3}
