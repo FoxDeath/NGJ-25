@@ -58,7 +58,6 @@ MonoBehaviour:
   buttonDropPrefab: {fileID: 5584314643020251422, guid: 7309289d61d31b741952267922667309, type: 3}
   pointsText: {fileID: 0}
   healthBar: {fileID: 0}
-  healthText: {fileID: 0}
   maxHealth: 100
   wave1: {fileID: 11400000, guid: e3c81f1bd0892bf45861a4e90917a0da, type: 2}
   enemyWaves:

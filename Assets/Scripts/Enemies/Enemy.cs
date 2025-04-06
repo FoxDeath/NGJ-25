@@ -44,8 +44,6 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log(name);
-
         // audio
         AudioManager.instance.PlayOneShot(this.enemySO.hurtAudio, this.transform.position);
         health -= damage;
