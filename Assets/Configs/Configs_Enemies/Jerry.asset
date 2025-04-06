@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2a109cded7dc1147b9a5af358e48497, type: 3}
-  m_Name: Spoder
+  m_Name: Jerry
   m_EditorClassIdentifier: 
   <stepsAudio>k__BackingField:
     Guid:
@@ -33,11 +33,12 @@ MonoBehaviour:
       Data3: -379121508
       Data4: 1965707004
     Path: event:/spider_death
-  enemyName: Spoder
-  sprite: {fileID: 8716473925627089912, guid: 873cb7a917407c942b3bb4ea3cebc144, type: 3}
+  enemyName: Jerry
+  sprite: {fileID: 4362977572589818981, guid: 1f0adc9eb713ea44eadfdb5441afdacf, type: 3}
   spriteOffset: {x: 0, y: 0, z: 0}
   attributes:
-    health: 30
-    speed: 3
+    health: 5
+    speed: 1
     reward: 3
     damage: 10
+  littleJerry: {fileID: 11400000, guid: f0422d1de902bb6459c11bd7862a4910, type: 2}

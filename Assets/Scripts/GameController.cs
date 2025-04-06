@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
 {
-    private EnemyFactory enemyFactory;
+    internal EnemyFactory enemyFactory;
     private TowerFactory towerFactory;
 
     [SerializeField] internal DamageNumber textSpawner;
