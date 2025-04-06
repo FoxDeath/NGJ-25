@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638795377364525042
+  lastModified: 638795390011445511
   FileSizes:
   - Name: Desktop
-    Value: 281184
+    Value: 305312
   Exists: 1
 --- !u!114 &-7704860884747546978
 MonoBehaviour:
@@ -216,7 +216,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -243,8 +243,8 @@ MonoBehaviour:
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -297,7 +297,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -422,7 +422,7 @@ MonoBehaviour:
   - {fileID: 3260576198657691238}
   StringsBanks:
   - {fileID: -252537835568917559}
-  cacheTime: 638795377364525042
+  cacheTime: 638795390011445511
   cacheVersion: 131846
 --- !u!114 &759266285882586505
 MonoBehaviour:
@@ -708,7 +708,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{5c09c0be-1f5f-4327-8c45-8ee55ca18c37}">
+	<object class="AudioFile" id="{7e90549b-f656-426b-ad4f-f9622d0970dc}">
 		<property name="assetPath">
 			<value>ui/scream_5.wav</value>
 		</property>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.79006802721088432</value>
+			<value>1</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{54685819-5a8a-4568-af53-67a8b66c7900}</destination>

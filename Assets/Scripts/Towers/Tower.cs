@@ -93,8 +93,6 @@ public class Tower : MonoBehaviour
 
                 // Play shot audio
                 AudioManager.instance.PlayOneShot(this.towerSO.shotAudio, this.transform.position);
-                // debug print
-                Debug.Log("play sound now");
                 
                 if(spriteTransform)
                 {
