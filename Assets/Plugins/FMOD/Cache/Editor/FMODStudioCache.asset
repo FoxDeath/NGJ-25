@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638795390011445511
+  lastModified: 638795428207874362
   FileSizes:
   - Name: Desktop
     Value: 305312
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/MUSIC.bank
   Name: MUSIC
   StudioPath: bank:/MUSIC
-  lastModified: 638795355178669406
+  lastModified: 638795421670424472
   FileSizes:
   - Name: Desktop
     Value: 274080
@@ -163,7 +163,7 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/AMBIENCE.bank
   Name: AMBIENCE
   StudioPath: bank:/AMBIENCE
-  lastModified: 638794683472325069
+  lastModified: 638795420537270663
   FileSizes:
   - Name: Desktop
     Value: 506
@@ -244,7 +244,7 @@ MonoBehaviour:
   - {fileID: -7906920643114349076}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -372,7 +372,7 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638795366543395001
+  lastModified: 638795420537279942
   FileSizes:
   - Name: Desktop
     Value: 1986
@@ -422,7 +422,7 @@ MonoBehaviour:
   - {fileID: 3260576198657691238}
   StringsBanks:
   - {fileID: -252537835568917559}
-  cacheTime: 638795390011445511
+  cacheTime: 638795428207874362
   cacheVersion: 131846
 --- !u!114 &759266285882586505
 MonoBehaviour:
@@ -466,7 +466,7 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638795366543378427
+  lastModified: 638795420537278470
   FileSizes:
   - Name: Desktop
     Value: 1524
