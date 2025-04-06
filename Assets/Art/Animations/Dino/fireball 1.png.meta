@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 887ae5daa9f455d4d8163962960e93c4
+guid: 9f4728041df17d842897e6ec030c23a8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,10 +46,10 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 250
-  spriteBorder: {x: 657, y: 457, z: 661, w: 371}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bullet with motion blur_0
+      name: fireball 1_0
       rect:
         serializedVersion: 2
-        x: 637
-        y: 460
-        width: 402
-        height: 272
+        x: 530
+        y: 2471
+        width: 494
+        height: 465
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e519f47553ab404486917ce9cdb2977
-      internalID: 729825912
+      spriteID: fb755c870b9714245a584ed32b6af66a
+      internalID: -1904871640
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bullet with motion blur_0: 729825912
+      fireball 1_0: -1904871640
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
