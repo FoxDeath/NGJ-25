@@ -34,7 +34,7 @@ MonoBehaviour:
   attributes:
     cost: 3
     attackRange: 7
-    attackSpeed: 2
+    attackSpeed: 1.5
     damage: 1
     projectile: {fileID: 0}
     projectileSpeed: 0
