@@ -37,7 +37,6 @@ public class Enemy : MonoBehaviour
         
         health = attributes.health;
         
-        // AudioManager.instance.PlayOneShot(FMODEvents.instance.screa, this.transform.position);
         navMeshAgent.SetDestination(targetPoint.position);
         this.gameController = gameController;
         // Initialize other properties based on enemySO

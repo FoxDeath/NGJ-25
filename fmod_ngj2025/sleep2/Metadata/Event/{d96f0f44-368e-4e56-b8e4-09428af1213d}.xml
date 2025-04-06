@@ -125,10 +125,7 @@
 	</object>
 	<object class="SingleSound" id="{24b5ccc6-b688-4089-9e19-a160ab255f7f}">
 		<property name="volume">
-			<value>-13</value>
-		</property>
-		<property name="pitch">
-			<value>2</value>
+			<value>6</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{96594bd4-30e7-47c6-ba7c-1c65c49b8211}</destination>
@@ -136,7 +133,7 @@
 	</object>
 	<object class="PlayPercentage" id="{5347fe08-8e65-455b-bceb-d6fd5bd2e39d}">
 		<property name="percentage">
-			<value>80</value>
+			<value>20</value>
 		</property>
 		<relationship name="sound">
 			<destination>{4aa57f00-df4f-4961-b2a8-782ed830233c}</destination>

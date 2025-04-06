@@ -90,6 +90,11 @@ public class Tower : MonoBehaviour
             if(closestEnemy != null)
             {
                 animator.SetTrigger(Attack1);
+
+                // Play shot audio
+                AudioManager.instance.PlayOneShot(this.towerSO.shotAudio, this.transform.position);
+                // debug print
+                Debug.Log("play sound now");
                 
                 if(spriteTransform)
                 {
@@ -122,8 +127,6 @@ public class Tower : MonoBehaviour
                     spriteRenderer.sprite = attributes.projectile;
                     projectile.AddComponent<Projectile>().Initialize(closestEnemy.transform, attributes.projectileSpeed);
 
-                    // Play shot audio
-                    AudioManager.instance.PlayOneShot(this.towerSO.shotAudio, this.transform.position);
                 }
                 else if(towerSO.towerType == TowerType.Laser)
                 {

@@ -116,9 +116,6 @@
 		<property name="startOffset">
 			<value>18</value>
 		</property>
-		<property name="volume">
-			<value>-11</value>
-		</property>
 		<relationship name="audioFile">
 			<destination>{680f6023-bc32-4535-8377-90153f8ee7aa}</destination>
 		</relationship>
@@ -133,7 +130,7 @@
 	</object>
 	<object class="PlayPercentage" id="{de8624c2-308b-45f0-ad98-58a312c1ef18}">
 		<property name="percentage">
-			<value>60</value>
+			<value>20</value>
 		</property>
 		<relationship name="sound">
 			<destination>{ee1f3389-f12d-41cf-81c8-96431899a71a}</destination>

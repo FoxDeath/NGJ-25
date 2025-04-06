@@ -11,6 +11,7 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference bunnyFootsteps { get; private set; }
+    [field: SerializeField] public EventReference coinPick { get; private set; }
 
 
     
