@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using FMODUnity;
 
 public class GameController : MonoBehaviour
 {
@@ -86,6 +87,7 @@ public class GameController : MonoBehaviour
             timerText.text = "0";
             currentTime = 0f;
             
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.endGameWin, this.transform.position);
             gameEnded = true;
 
             if(enemies.Count > 0)
@@ -210,6 +212,9 @@ public class GameController : MonoBehaviour
     
     public void TakeDamage(Enemy enemy)
     {
+        //audio
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.hpLoss, this.transform.position);
+
         currentHealth -= enemy.attributes.damage;
         
         enemies.Remove(enemy);
@@ -223,6 +228,7 @@ public class GameController : MonoBehaviour
             gameEnded = true;
             // Handle game over
             Debug.Log("Game Over");
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.endGameLose, this.transform.position);
         }
         
         Destroy(enemy.gameObject);

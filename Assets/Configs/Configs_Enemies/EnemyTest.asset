@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <stepsAudio>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <screamAudio>k__BackingField:
+      Data1: 863918809
+      Data2: 1308031543
+      Data3: 1202174881
+      Data4: 1320834475
+    Path: event:/spider_steps
+  <hurtAudio>k__BackingField:
     Guid:
       Data1: -1452814062
       Data2: 1259479584
       Data3: 1986033834
       Data4: -300098444
-    Path: event:/spider_scream
+    Path: event:/enemy_hurt
   <deathAudio>k__BackingField:
     Guid:
       Data1: 797850936
