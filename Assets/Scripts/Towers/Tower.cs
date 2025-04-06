@@ -117,7 +117,7 @@ public class Tower : MonoBehaviour
 
                     // Instantiate projectile and set its target to the closest enemy
                     GameObject projectile = new GameObject(gameObject.name+ " Projectile");
-                    projectile.transform.position = transform.position;
+                    projectile.transform.position = transform.position + new Vector3(0f, 4f, 0f);
                     SpriteRenderer spriteRenderer = projectile.AddComponent<SpriteRenderer>();
                     spriteRenderer.sprite = attributes.projectile;
                     projectile.AddComponent<Projectile>().Initialize(closestEnemy.transform, attributes.projectileSpeed);

@@ -20,10 +20,11 @@ public class Projectile : MonoBehaviour
     {
         if (target != null)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 targetPosition = target.position + new Vector3(0f, 4f, 0f);
+            Vector3 direction = (targetPosition - transform.position).normalized;
             transform.position += direction * speed * Time.deltaTime;
 
-            if (Vector3.Distance(transform.position, target.position) < 0.1f)
+            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
             {
                 HitTarget();
             }
