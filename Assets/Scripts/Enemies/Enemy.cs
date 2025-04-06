@@ -63,6 +63,21 @@ public class Enemy : MonoBehaviour
     {
         animator.SetTrigger(Die1);
         gameController.KillEnemy(this);
+
+        if(enemySO.littleJerry != null)
+        {
+            SpawnLittleJerries().Forget();
+        }
+    }
+
+    private async UniTask SpawnLittleJerries()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            gameController.enemyFactory.CreateEnemy(enemySO.littleJerry, transform, targetPoint, gameController);
+            
+            await UniTask.Delay(100, cancellationToken: destroyCancellationToken);
+        }
     }
 
     private async UniTask DamagePlaceholderAnimation()

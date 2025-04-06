@@ -15,6 +15,8 @@ public class EnemySO : ScriptableObject
     
     [SerializeField]
     public EnemyAttributes attributes;
+
+    public EnemySO littleJerry;
 }
 
 [Serializable]
