@@ -38,7 +38,7 @@ MonoBehaviour:
   spriteOffset: {x: 0, y: 0, z: 0}
   attributes:
     health: 5
-    speed: 1
+    speed: 3
     reward: 3
     damage: 10
   littleJerry: {fileID: 11400000, guid: f0422d1de902bb6459c11bd7862a4910, type: 2}
