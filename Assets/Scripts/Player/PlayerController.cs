@@ -61,6 +61,8 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.PlaceTower.performed += ctx => PlaceTower();
         
         playerInput.Player.Escape.performed += ctx => gameController.PauseGame();
+
+        hotbarController.Initialize(towerConfigs);
     }
     
     private void OnDestroy()

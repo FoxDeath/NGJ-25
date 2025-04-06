@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    private static readonly int Attack1 = Animator.StringToHash("Attack");
     public TowerAttributes attributes;
 
     public TowerSO towerSO;
@@ -14,10 +15,15 @@ public class Tower : MonoBehaviour
     GameController gameController;
     
     private Transform spriteTransform;
+    private Vector3 spriteTransformLocalScale;
     
+    public Animator animator;
+
     private void Start()
     {
         spriteTransform = transform.GetChild(0);
+        
+        spriteTransformLocalScale = spriteTransform.localScale;
     }
 
     public void Initialize(TowerSO towerSO, Vector3 spawnPoint)
@@ -85,15 +91,17 @@ public class Tower : MonoBehaviour
             {
                 closestEnemy.TakeDamage(attributes.damage);
                 
+                animator.SetTrigger(Attack1);
+                
                 if(spriteTransform)
                 {
                     if(transform.position.x > closestEnemy.transform.position.x)
                     {
-                        spriteTransform.localScale = new Vector3(-1, 1, 1);
+                        spriteTransform.localScale = new Vector3(-1 * spriteTransformLocalScale.x, spriteTransformLocalScale.y, spriteTransformLocalScale.z);
                     }
                     else
                     {
-                        spriteTransform.localScale = new Vector3(1, 1, 1);
+                        spriteTransform.localScale = spriteTransformLocalScale;
                     }
                 }
                 

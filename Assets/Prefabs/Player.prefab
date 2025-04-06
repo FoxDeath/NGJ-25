@@ -980,7 +980,7 @@ MonoBehaviour:
   heldTower: {fileID: 6382965385189535303}
   towerConfigs:
   - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
-  - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
+  - {fileID: 11400000, guid: 9889526872580f045a161e52b932cb83, type: 2}
   - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
 --- !u!135 &863492702110849527
 SphereCollider:

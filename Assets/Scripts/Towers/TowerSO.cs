@@ -7,7 +7,8 @@ public class TowerSO : ScriptableObject
 {
     public string towerName;
     public Sprite towerSprite;
-    public RuntimeAnimatorController animator;
+    public GameObject sprite;
+    public Vector3 spriteOffset;
 
     [field: SerializeField] public EventReference shotAudio { get; private set; } 
     [field: SerializeField] public EventReference placementAudio { get; private set; } 

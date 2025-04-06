@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ec975b37e28f7443b8083c89a47d92a, type: 3}
-  m_Name: TowerTest
+  m_Name: NutCracker
   m_EditorClassIdentifier: 
-  towerName: Tower Test
-  towerSprite: {fileID: 21300000, guid: 9f143d8fcafd5f34eaac453ab24c7a4d, type: 3}
-  animator: {fileID: 0}
+  towerName: Nut Cracker
+  towerSprite: {fileID: 21300000, guid: 446855013ec6da94ab38ae6fdb71e972, type: 3}
+  sprite: {fileID: 2536365587462017149, guid: c96cd2cfa93389f429713c8d9be8c7ff, type: 3}
+  spriteOffset: {x: 0, y: 0, z: 0}
   <shotAudio>k__BackingField:
     Guid:
       Data1: -647033020
@@ -30,9 +31,9 @@ MonoBehaviour:
       Data4: -1900879224
     Path: event:/toy_soldier_placement
   attributes:
-    cost: 1
-    attackRange: 10
-    attackSpeed: 1
-    damage: 1
-    projectile: {fileID: 21300000, guid: 887ae5daa9f455d4d8163962960e93c4, type: 3}
-    projectileSpeed: 20
+    cost: 2
+    attackRange: 5
+    attackSpeed: 2
+    damage: 2
+    projectile: {fileID: 0}
+    projectileSpeed: 0
