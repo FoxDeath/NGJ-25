@@ -17,6 +17,10 @@ MonoBehaviour:
     spawnDelay: 1
     spawnDelayVariance: 0.2
     amount: 10
+  - enemy: {fileID: 11400000, guid: ce495afb6b3a0d546a3d4566d16d192e, type: 2}
+    spawnDelay: 1
+    spawnDelayVariance: 0.2
+    amount: 1
   spawnDelay: 1
   spawnDelayVariance: 0.2
   timeDifficultyUp: 20
