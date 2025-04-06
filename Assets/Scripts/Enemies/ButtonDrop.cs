@@ -23,6 +23,7 @@ public class ButtonDrop : MonoBehaviour
         gameController.points += attributesReward;
         gameController.textSpawner.Spawn(transform.position, "+" + attributesReward);
         Destroy(gameObject);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.coinPick, this.transform.position);
     }
 
     public void SetValue(int attributesReward)

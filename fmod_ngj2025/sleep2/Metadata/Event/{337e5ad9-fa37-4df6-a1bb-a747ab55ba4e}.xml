@@ -104,9 +104,6 @@
 		<property name="startOffset">
 			<value>0.5</value>
 		</property>
-		<property name="looping">
-			<value>true</value>
-		</property>
 		<relationship name="sounds">
 			<destination>{e3b35265-2897-4b9d-893e-00af30c9c72e}</destination>
 			<destination>{915ee959-a12f-47c6-95b1-3db85047243a}</destination>
