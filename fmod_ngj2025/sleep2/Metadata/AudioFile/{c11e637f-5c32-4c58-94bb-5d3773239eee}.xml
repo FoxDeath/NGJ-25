@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{51f4efff-de59-44c3-a15f-99224c81383a}">
+	<object class="AudioFile" id="{c11e637f-5c32-4c58-94bb-5d3773239eee}">
 		<property name="assetPath">
-			<value>monsters/spider_scream_1.wav</value>
+			<value>monsters/doll_death.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{54685819-5a8a-4568-af53-67a8b66c7900}</destination>

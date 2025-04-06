@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{d8388e5a-9a74-4372-964c-46cae633e16d}">
+	<object class="AudioFile" id="{04e7d7fc-0efa-493c-8c99-a0ac3d711034}">
 		<property name="assetPath">
-			<value>towers/toy_soldier_shoot.wav</value>
+			<value>ui/scream_3.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.13975056689342405</value>
+			<value>0.79006802721088432</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{54685819-5a8a-4568-af53-67a8b66c7900}</destination>

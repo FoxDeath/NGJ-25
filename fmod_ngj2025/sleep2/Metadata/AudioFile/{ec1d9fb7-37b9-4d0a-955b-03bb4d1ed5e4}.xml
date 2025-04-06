@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ec1d9fb7-37b9-4d0a-955b-03bb4d1ed5e4}">
+		<property name="assetPath">
+			<value>towers/spinner_place.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.64147392290249428</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{54685819-5a8a-4568-af53-67a8b66c7900}</destination>
+		</relationship>
+	</object>
+</objects>
