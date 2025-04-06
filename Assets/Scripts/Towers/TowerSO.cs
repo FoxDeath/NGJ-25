@@ -5,9 +5,11 @@ using FMODUnity;
 [CreateAssetMenu(fileName = "Tower", menuName = "ScriptableObjects/TowerSO", order = 1)]
 public class TowerSO : ScriptableObject
 {
+    public TowerType towerType;
     public string towerName;
     public Sprite towerSprite;
-    public RuntimeAnimatorController animator;
+    public GameObject sprite;
+    public Vector3 spriteOffset;
 
     [field: SerializeField] public EventReference shotAudio { get; private set; } 
     [field: SerializeField] public EventReference placementAudio { get; private set; } 
@@ -26,4 +28,12 @@ public class TowerAttributes
 
     public Sprite projectile;
     public float projectileSpeed;
+}
+
+public enum TowerType
+{
+    Projectile,
+    AOEOnPoint,
+    AOENormal,
+    Laser
 }

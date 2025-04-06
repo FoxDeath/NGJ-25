@@ -7,12 +7,11 @@ public class TowerFactory
         GameObject towerObject = new GameObject(towerSO.towerName);
         Tower tower = towerObject.AddComponent<Tower>();
         
-        GameObject towerSpriteObject = new GameObject("TowerSprite");
-        towerSpriteObject.transform.SetParent(towerObject.transform);
-        SpriteRenderer spriteRenderer = towerSpriteObject.AddComponent<SpriteRenderer>();
-        spriteRenderer.sprite = towerSO.towerSprite;
-        
-        SpriteController spriteController = towerSpriteObject.AddComponent<SpriteController>();
+        GameObject spriteObject = Object.Instantiate(towerSO.sprite, towerObject.transform, false);
+        SpriteController spriteController = spriteObject.AddComponent<SpriteController>();
+        spriteController.offset = towerSO.spriteOffset;
+
+        tower.animator = spriteObject.GetComponent<Animator>();
         
         tower.Initialize(towerSO, spawnPoint);
     }
