@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
     
+    [SerializeField] private EnemyWaveSO wave1;
     [SerializeField] private List<EnemyWaveSO> enemyWaves;
     private int currentWaveIndex = 0;
     private float currentWaveTime = 0f;
@@ -65,7 +66,7 @@ public class GameController : MonoBehaviour
         
         currentTime = maxTime;
         
-        SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+        SpwanWaveScripted1(wave1).Forget();
     }
 
     private void Update()
@@ -102,7 +103,7 @@ public class GameController : MonoBehaviour
                 currentWaveIndex = 0;
             }
             
-            SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+            SpawnWaveNormal(enemyWaves[currentWaveIndex]).Forget();
             
             return;
         }
@@ -118,7 +119,7 @@ public class GameController : MonoBehaviour
                     currentWaveIndex = enemyWaves.Count - 1;
                 }
                 
-                SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+                SpawnWaveNormal(enemyWaves[currentWaveIndex]).Forget();
             }
             else if(currentWaveTime > enemyWaves[currentWaveIndex].timeDifficultyDown)
             {
@@ -129,18 +130,36 @@ public class GameController : MonoBehaviour
                     currentWaveIndex = 0;
                 }
                 
-                SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+                SpawnWaveNormal(enemyWaves[currentWaveIndex]).Forget();
             }
             else
             {
                 currentWaveTime = 0f;
                 
-                SpawnWave(enemyWaves[currentWaveIndex]).Forget();
+                SpawnWaveNormal(enemyWaves[currentWaveIndex]).Forget();
             }
         }
     }
-
-    private async UniTask SpawnWave(EnemyWaveSO waveSo)
+    
+    private async UniTask SpwanWaveScripted1(EnemyWaveSO waveSo)
+    {
+        currentWaveTime = 0f;
+        
+        foreach(var enemiesToSpawn in waveSo.enemiesToSpawn)
+        {
+            for (int i = 0; i < enemiesToSpawn.amount; i++)
+            {
+                Enemy enemy = enemyFactory.CreateEnemy(enemiesToSpawn.enemy, spawnPoints[0], targetPoints[0], this);
+                enemies.Add(enemy);
+                
+                await UniTask.Delay((int)((enemiesToSpawn.spawnDelay + Random.Range(-enemiesToSpawn.spawnDelayVariance, enemiesToSpawn.spawnDelayVariance)) * 1000), cancellationToken:destroyCancellationToken);
+            }
+            
+            await UniTask.Delay((int)((waveSo.spawnDelay + Random.Range(-waveSo.spawnDelayVariance, enemiesToSpawn.spawnDelayVariance)) * 1000), cancellationToken:destroyCancellationToken);
+        }
+    }
+    
+    private async UniTask SpawnWaveNormal(EnemyWaveSO waveSo)
     {
         currentWaveTime = 0f;
         
