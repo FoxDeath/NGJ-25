@@ -83,12 +83,18 @@ public class GameController : MonoBehaviour
         {
             timerText.text = currentTime.ToString("0.00");
         }
-        else
+        else if(currentTime < 0f)
         {
             timerText.text = "0.00";
             currentTime = 0f;
             
             gameEnded = true;
+
+            if(enemies.Count > 0)
+            {
+                return;
+            }
+            
             hudCanvas.SetActive(false);
             winCanvas.SetActive(true);
             Time.timeScale = 0f;
@@ -167,6 +173,11 @@ public class GameController : MonoBehaviour
         {
             for (int i = 0; i < enemiesToSpawn.amount; i++)
             {
+                if(gameEnded)
+                {
+                    return;
+                }
+                
                 Enemy enemy = enemyFactory.CreateEnemy(enemiesToSpawn.enemy, spawnPoints[Random.Range(0, spawnPoints.Count)], targetPoints[Random.Range(0, targetPoints.Count)], this);
                 enemies.Add(enemy);
                 
