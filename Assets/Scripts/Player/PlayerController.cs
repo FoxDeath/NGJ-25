@@ -6,7 +6,9 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    private static readonly int Moving = Animator.StringToHash("Moving");
     private GameController gameController;
+    private HotbarController hotbarController;
     
     [SerializeField] private float speed = 5f;
 
@@ -28,12 +30,23 @@ public class PlayerController : MonoBehaviour
     private int selectedTower;
     private Camera mainCamera;
 
+    private Animator animator;
+
+    private Transform spriteTransform;
+
+    private bool isMoving;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         selectedTower = -1;
         
         gameController = FindAnyObjectByType<GameController>();
+        hotbarController = FindAnyObjectByType<HotbarController>(FindObjectsInactive.Include);
+
+        animator = GetComponentInChildren<Animator>();
+
+        spriteTransform = transform.GetChild(0);
         
         mainCamera = Camera.main;
         playerInput = new PlayerInput();
@@ -42,11 +55,21 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._1.performed += ctx => SelectTower(0);
         playerInput.Player._2.performed += ctx => SelectTower(1);
         playerInput.Player._3.performed += ctx => SelectTower(2);
-        playerInput.Player._4.performed += ctx => SelectTower(3);
-        playerInput.Player._5.performed += ctx => SelectTower(4);
+        //playerInput.Player._4.performed += ctx => SelectTower(3);
+        //playerInput.Player._5.performed += ctx => SelectTower(4);
         
         playerInput.Player.PlaceTower.performed += ctx => PlaceTower();
-
+        
+        playerInput.Player.Escape.performed += ctx => gameController.PauseGame();
+    }
+    
+    private void OnDestroy()
+    {
+        playerInput.Player.Disable();
+        playerInput.Dispose();
+        
+        playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        playerFootsteps.release();
     }
 
     // Update is called once per frame
@@ -54,6 +77,25 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = playerInput.Player.Move.ReadValue<Vector2>();
         mousePosition = playerInput.Player.MousePosition.ReadValue<Vector2>();
+
+        if(moveInput != Vector2.zero && !isMoving)
+        {
+            isMoving = true;
+            animator.SetBool(Moving, true);
+            // get the playback state
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+        }
+        else if(moveInput == Vector2.zero && isMoving)
+        {
+            isMoving = false;
+            animator.SetBool(Moving, false);
+            playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
         
         Move(moveInput);
 
@@ -92,9 +134,7 @@ public class PlayerController : MonoBehaviour
         {
             // Create the tower at the held position
             gameController.SpawnTower(currentTowerConfig, heldTower.transform.position);
-            currentTowerConfig = null;
-            heldTower.sprite = null;
-            selectedTower = -1;
+            ResetTower();
         }
     }
 
@@ -114,16 +154,22 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 move = new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
         transform.Translate(move);
+
+        if(direction.x > 0)
+        {
+            spriteTransform.localScale = new Vector3(1, 1, 1);
+        }
+        else if(direction.x < 0)
+        {
+            spriteTransform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     private void SelectTower(int i)
     {
         if(i == selectedTower)
         {
-            currentTowerConfig = null;
-            heldTower.sprite = null;
-            selectedTower = -1;
-            canPlaceTower = false;
+            ResetTower();
             return;
         }
         
@@ -131,26 +177,17 @@ public class PlayerController : MonoBehaviour
         
         currentTowerConfig = towerConfigs[selectedTower];
         heldTower.sprite = currentTowerConfig.towerSprite;
+        
+        hotbarController.SelectHotbarImage(selectedTower);
     }
 
-
-    private void UpdateSound()
+    private void ResetTower()
     {
-        // start footsteps event if the player has an x velocity and is on the ground
-        if (moveInput.x != 0)
-        {
-            // get the playback state
-            PLAYBACK_STATE playbackState;
-            playerFootsteps.getPlaybackState(out playbackState);
-            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
-            {
-                playerFootsteps.start();
-            }
-        }
-        // otherwise, stop the footsteps event
-        else 
-        {
-            playerFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
+        currentTowerConfig = null;
+        heldTower.sprite = null;
+        selectedTower = -1;
+        canPlaceTower = false;
+            
+        hotbarController.AllGray();
     }
 }

@@ -48,13 +48,22 @@ MonoBehaviour:
   damageNumber: {fileID: 6146380392257504735, guid: 04f3d4947dc5bf64da23ae175eb9d3f2, type: 3}
   damageNumberBig: {fileID: 5626256408664991587, guid: 44bc002073f34a9468f2b0b3bdf64ba1, type: 3}
   enemySOs:
-  - {fileID: 11400000, guid: d04256043bca34a4694f48f5b3a201ab, type: 2}
-  spawnPoint: {fileID: 0}
-  targetPoint: {fileID: 0}
-  enemies: []
+  - {fileID: 11400000, guid: 7919ba1de5a52d446b5da74e5a4ae5f2, type: 2}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  targetPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   startPoints: 5
   buttonDropPrefab: {fileID: 5584314643020251422, guid: 7309289d61d31b741952267922667309, type: 3}
   pointsText: {fileID: 0}
   healthBar: {fileID: 0}
   healthText: {fileID: 0}
   maxHealth: 100
+  enemyWaves:
+  - {fileID: 11400000, guid: 651e8991b97fefc42bbc38dfabc25ecf, type: 2}
+  - {fileID: 11400000, guid: 591d9834b4ebaaa47bfdd38688e36075, type: 2}
+  - {fileID: 11400000, guid: 26b9e515a0d3d6048951d2825fdeca17, type: 2}
+  maxTime: 500
+  timerText: {fileID: 0}

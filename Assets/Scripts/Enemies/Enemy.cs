@@ -6,8 +6,9 @@ using FMODUnity;
 
 public class Enemy : MonoBehaviour
 {
+    private static readonly int Die1 = Animator.StringToHash("Die");
     public EnemySO enemySO;
-    private Animator animator;
+    internal Animator animator;
     internal EnemyAttributes attributes;
     private NavMeshAgent navMeshAgent;
     private GameController gameController;
@@ -59,6 +60,7 @@ public class Enemy : MonoBehaviour
     
     private void Die()
     {
+        animator.SetTrigger(Die1);
         gameController.KillEnemy(this);
     }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
+using Object = UnityEngine.Object;
 
 public class EnemyFactory
 {
@@ -22,12 +23,11 @@ public class EnemyFactory
         capsuleCollider.radius = 0.5f;
         capsuleCollider.height = 2f;
         
-        GameObject spriteObject = new GameObject("Sprite");
-        spriteObject.transform.SetParent(enemyObject.transform);
-        SpriteRenderer spriteRenderer = spriteObject.AddComponent<SpriteRenderer>();
+        GameObject spriteObject = Object.Instantiate(enemySO.sprite, enemyObject.transform, false);
         SpriteController spriteController = spriteObject.AddComponent<SpriteController>();
-        Animator animator = spriteObject.AddComponent<Animator>();
-        animator.runtimeAnimatorController = enemySO.animator;
+        spriteController.offset = enemySO.spriteOffset;
+
+        enemy.animator = spriteObject.GetComponent<Animator>();
         
         enemy.Initialize(enemySO, navMeshAgent, spawnPoint, targetPoint, gameController);
         return enemy;

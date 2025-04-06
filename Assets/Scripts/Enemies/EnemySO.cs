@@ -10,7 +10,8 @@ public class EnemySO : ScriptableObject
     [field: SerializeField] public EventReference screamAudio { get; private set; }
     [field: SerializeField] public EventReference deathAudio { get; private set; }
     public string enemyName;
-    public RuntimeAnimatorController animator;
+    public GameObject sprite;
+    public Vector3 spriteOffset;
     
     [SerializeField]
     public EnemyAttributes attributes;

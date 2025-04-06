@@ -12,6 +12,13 @@ public class Tower : MonoBehaviour
     private float attackCooldown;
     
     GameController gameController;
+    
+    private Transform spriteTransform;
+    
+    private void Start()
+    {
+        spriteTransform = transform.GetChild(0);
+    }
 
     public void Initialize(TowerSO towerSO, Vector3 spawnPoint)
     {
@@ -77,6 +84,18 @@ public class Tower : MonoBehaviour
             if(closestEnemy != null)
             {
                 closestEnemy.TakeDamage(attributes.damage);
+                
+                if(spriteTransform)
+                {
+                    if(transform.position.x > closestEnemy.transform.position.x)
+                    {
+                        spriteTransform.localScale = new Vector3(-1, 1, 1);
+                    }
+                    else
+                    {
+                        spriteTransform.localScale = new Vector3(1, 1, 1);
+                    }
+                }
                 
                 if(attributes.projectile != null)
                 {

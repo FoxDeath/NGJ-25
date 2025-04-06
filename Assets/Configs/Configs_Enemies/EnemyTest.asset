@@ -34,7 +34,8 @@ MonoBehaviour:
       Data4: 1965707004
     Path: event:/spider_death
   enemyName: Test
-  animator: {fileID: 9100000, guid: 4a2497ac72ff2684194913bd5f866313, type: 2}
+  sprite: {fileID: 0}
+  spriteOffset: {x: 0, y: 0, z: 0}
   attributes:
     health: 5
     speed: 5
