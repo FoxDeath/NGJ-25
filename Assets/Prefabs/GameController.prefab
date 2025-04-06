@@ -47,8 +47,6 @@ MonoBehaviour:
   textSpawner: {fileID: 6146380392257504735, guid: 378ff9bee64a5cb42ab246bbe78bc704, type: 3}
   damageNumber: {fileID: 6146380392257504735, guid: 04f3d4947dc5bf64da23ae175eb9d3f2, type: 3}
   damageNumberBig: {fileID: 5626256408664991587, guid: 44bc002073f34a9468f2b0b3bdf64ba1, type: 3}
-  enemySOs:
-  - {fileID: 11400000, guid: 7919ba1de5a52d446b5da74e5a4ae5f2, type: 2}
   spawnPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -65,5 +63,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 651e8991b97fefc42bbc38dfabc25ecf, type: 2}
   - {fileID: 11400000, guid: 591d9834b4ebaaa47bfdd38688e36075, type: 2}
   - {fileID: 11400000, guid: 26b9e515a0d3d6048951d2825fdeca17, type: 2}
-  maxTime: 500
+  maxTime: 120
   timerText: {fileID: 0}
+  hudCanvas: {fileID: 0}
+  gameOverCanvas: {fileID: 0}
+  startCanvas: {fileID: 0}
+  winCanvas: {fileID: 0}
+  pauseCanvas: {fileID: 0}
