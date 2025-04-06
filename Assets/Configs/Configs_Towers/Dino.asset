@@ -32,9 +32,9 @@ MonoBehaviour:
       Data4: -1900879224
     Path: event:/toy_soldier_placement
   attributes:
-    cost: 3
-    attackRange: 20
+    cost: 6
+    attackRange: 30
     attackSpeed: 3
-    damage: 3
+    damage: 4
     projectile: {fileID: -1904871640, guid: 9f4728041df17d842897e6ec030c23a8, type: 3}
     projectileSpeed: 20

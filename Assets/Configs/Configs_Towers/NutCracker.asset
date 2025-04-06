@@ -33,7 +33,7 @@ MonoBehaviour:
     Path: event:/toy_soldier_placement
   attributes:
     cost: 2
-    attackRange: 10
+    attackRange: 7
     attackSpeed: 2
     damage: 3
     projectile: {fileID: 0}
