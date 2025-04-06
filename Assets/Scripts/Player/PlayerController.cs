@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._1.performed += ctx => SelectTower(0);
         playerInput.Player._2.performed += ctx => SelectTower(1);
         playerInput.Player._3.performed += ctx => SelectTower(2);
-        //playerInput.Player._4.performed += ctx => SelectTower(3);
+        playerInput.Player._4.performed += ctx => SelectTower(3);
         //playerInput.Player._5.performed += ctx => SelectTower(4);
         
         playerInput.Player.PlaceTower.performed += ctx => PlaceTower();

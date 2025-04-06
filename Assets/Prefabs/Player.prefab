@@ -982,6 +982,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35cd1806e5386574886b4c5ac8c5e15b, type: 2}
   - {fileID: 11400000, guid: 9889526872580f045a161e52b932cb83, type: 2}
   - {fileID: 11400000, guid: 51725f81d5ce51042a25e8f24be91a2b, type: 2}
+  - {fileID: 11400000, guid: 012f05391c550a740bde34ad42fc1b9c, type: 2}
 --- !u!135 &863492702110849527
 SphereCollider:
   m_ObjectHideFlags: 0
