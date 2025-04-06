@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour
     private bool isMoving;
     private bool isSprinting;
 
+    [SerializeField] private Transform limitNorth;
+    [SerializeField] private Transform limitSouth;
+    [SerializeField] private Transform limitEast;
+    [SerializeField] private Transform limitWest;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -140,7 +145,7 @@ public class PlayerController : MonoBehaviour
         {
             // Create the tower at the held position
             gameController.SpawnTower(currentTowerConfig, heldTower.transform.position);
-            ResetTower();
+            //ResetTower();
         }
     }
 
@@ -169,7 +174,13 @@ public class PlayerController : MonoBehaviour
             speed = this.speed;
         }
         Vector3 move = new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
-        transform.Translate(move);
+        
+        
+        // Clamp the player's position to the defined limits
+        Vector3 newPosition = transform.position + move;
+        newPosition.x = Mathf.Clamp(newPosition.x, limitWest.position.x, limitEast.position.x);
+        newPosition.z = Mathf.Clamp(newPosition.z, limitSouth.position.z, limitNorth.position.z);
+        transform.position = newPosition;
 
         if(direction.x > 0)
         {
