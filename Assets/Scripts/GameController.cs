@@ -31,7 +31,6 @@ public class GameController : MonoBehaviour
     [SerializeField] TextMeshProUGUI pointsText;
 
     [SerializeField] private Slider healthBar;
-    [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
     
@@ -72,7 +71,6 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         pointsText.text = points.ToString();
-        healthText.text = currentHealth.ToString();
         healthBar.value = (float)currentHealth / maxHealth;
         
         currentWaveTime += Time.deltaTime;
@@ -81,11 +79,11 @@ public class GameController : MonoBehaviour
 
         if(currentTime > 0f)
         {
-            timerText.text = currentTime.ToString("0.00");
+            timerText.text = currentTime.ToString("0");
         }
         else if(currentTime < 0f)
         {
-            timerText.text = "0.00";
+            timerText.text = "0";
             currentTime = 0f;
             
             gameEnded = true;
