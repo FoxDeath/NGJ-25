@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    private static readonly int Attack1 = Animator.StringToHash("Attack");
     public TowerAttributes attributes;
 
     public TowerSO towerSO;
@@ -12,6 +13,18 @@ public class Tower : MonoBehaviour
     private float attackCooldown;
     
     GameController gameController;
+    
+    private Transform spriteTransform;
+    private Vector3 spriteTransformLocalScale;
+    
+    public Animator animator;
+
+    private void Start()
+    {
+        spriteTransform = transform.GetChild(0);
+        
+        spriteTransformLocalScale = spriteTransform.localScale;
+    }
 
     public void Initialize(TowerSO towerSO, Vector3 spawnPoint)
     {
@@ -76,19 +89,64 @@ public class Tower : MonoBehaviour
 
             if(closestEnemy != null)
             {
-                closestEnemy.TakeDamage(attributes.damage);
+                animator.SetTrigger(Attack1);
                 
-                if(attributes.projectile != null)
+                if(spriteTransform)
                 {
+                    if(transform.position.x > closestEnemy.transform.position.x)
+                    {
+                        spriteTransform.localScale = new Vector3(-1 * spriteTransformLocalScale.x, spriteTransformLocalScale.y, spriteTransformLocalScale.z);
+                    }
+                    else
+                    {
+                        spriteTransform.localScale = spriteTransformLocalScale;
+                    }
+                }
+
+                if(towerSO.towerType == TowerType.AOENormal)
+                {
+                    // Implement AOE attack logic here
+                    foreach (var enemy in enemiesInRange)
+                    {
+                        enemy.TakeDamage(attributes.damage);
+                    }
+                }
+                else if(towerSO.towerType == TowerType.Projectile)
+                {
+                    closestEnemy.TakeDamage(attributes.damage);
+
                     // Instantiate projectile and set its target to the closest enemy
                     GameObject projectile = new GameObject(gameObject.name+ " Projectile");
-                    projectile.transform.position = transform.position;
+                    projectile.transform.position = transform.position + new Vector3(0f, 4f, 0f);
                     SpriteRenderer spriteRenderer = projectile.AddComponent<SpriteRenderer>();
                     spriteRenderer.sprite = attributes.projectile;
                     projectile.AddComponent<Projectile>().Initialize(closestEnemy.transform, attributes.projectileSpeed);
 
                     // Play shot audio
                     AudioManager.instance.PlayOneShot(this.towerSO.shotAudio, this.transform.position);
+                }
+                else if(towerSO.towerType == TowerType.Laser)
+                {
+                    // Implement laser attack logic here
+                    closestEnemy.TakeDamage(attributes.damage);
+                }
+                else if(towerSO.towerType == TowerType.AOEOnPoint)
+                {
+                    closestEnemy.TakeDamage(attributes.damage);
+        
+                    foreach (var enemy in gameController.enemies)
+                    {
+                        if(enemy == closestEnemy)
+                        {
+                            continue;
+                        }
+                        
+                        float distance = Vector3.Distance(closestEnemy.transform.position, enemy.transform.position);
+                        if(distance <= 5f)
+                        {
+                            enemy.TakeDamage(Mathf.RoundToInt(attributes.damage / 2f));
+                        }
+                    }    
                 }
             }
             

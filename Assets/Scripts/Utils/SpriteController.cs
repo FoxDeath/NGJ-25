@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SpriteController : MonoBehaviour
 {
+    [SerializeField] internal Vector3 offset;
     private Animator animator;
     private Camera mainCamera;
     
@@ -23,7 +24,7 @@ public class SpriteController : MonoBehaviour
         Vector3 direction = -mainCamera.transform.forward;
         direction.y = 0; // Keep the rotation on the Y axis
         Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.localPosition = Vector3.zero;
+        transform.localPosition = offset;
         transform.rotation = rotation;
     }
 }

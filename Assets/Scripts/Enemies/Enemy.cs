@@ -6,8 +6,9 @@ using FMODUnity;
 
 public class Enemy : MonoBehaviour
 {
+    private static readonly int Die1 = Animator.StringToHash("Die");
     public EnemySO enemySO;
-    private Animator animator;
+    internal Animator animator;
     internal EnemyAttributes attributes;
     private NavMeshAgent navMeshAgent;
     private GameController gameController;
@@ -52,6 +53,7 @@ public class Enemy : MonoBehaviour
         DamagePlaceholderAnimation().Forget();
         if (health <= 0)
         {
+            navMeshAgent.isStopped = true;
             Die();
             AudioManager.instance.PlayOneShot(this.enemySO.deathAudio, this.transform.position);
         }
@@ -59,7 +61,23 @@ public class Enemy : MonoBehaviour
     
     private void Die()
     {
+        animator.SetTrigger(Die1);
         gameController.KillEnemy(this);
+
+        if(enemySO.littleJerry != null)
+        {
+            SpawnLittleJerries().Forget();
+        }
+    }
+
+    private async UniTask SpawnLittleJerries()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            gameController.enemyFactory.CreateEnemy(enemySO.littleJerry, transform, targetPoint, gameController);
+            
+            await UniTask.Delay(100, cancellationToken: destroyCancellationToken);
+        }
     }
 
     private async UniTask DamagePlaceholderAnimation()

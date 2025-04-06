@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec975b37e28f7443b8083c89a47d92a, type: 3}
+  m_Name: ToySoldier
+  m_EditorClassIdentifier: 
+  towerType: 0
+  towerName: ToySoldier
+  towerSprite: {fileID: 21300000, guid: 9f143d8fcafd5f34eaac453ab24c7a4d, type: 3}
+  sprite: {fileID: 8706159420738470588, guid: e05fc438b8e49664b941dc9c06b809c8, type: 3}
+  spriteOffset: {x: 0, y: 0, z: 0}
+  <shotAudio>k__BackingField:
+    Guid:
+      Data1: -647033020
+      Data2: 1314272910
+      Data3: 1107944632
+      Data4: 1025634698
+    Path: event:/toy_soldier_shoot
+  <placementAudio>k__BackingField:
+    Guid:
+      Data1: 746450578
+      Data2: 1227690748
+      Data3: 892365959
+      Data4: -1900879224
+    Path: event:/toy_soldier_placement
+  attributes:
+    cost: 1
+    attackRange: 10
+    attackSpeed: 1
+    damage: 1
+    projectile: {fileID: 729825912, guid: 887ae5daa9f455d4d8163962960e93c4, type: 3}
+    projectileSpeed: 20
