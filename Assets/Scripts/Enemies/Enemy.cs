@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
         DamagePlaceholderAnimation().Forget();
         if (health <= 0)
         {
+            navMeshAgent.isStopped = true;
             Die();
             AudioManager.instance.PlayOneShot(this.enemySO.deathAudio, this.transform.position);
         }
