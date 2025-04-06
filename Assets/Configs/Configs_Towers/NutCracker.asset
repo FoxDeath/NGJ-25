@@ -19,18 +19,18 @@ MonoBehaviour:
   spriteOffset: {x: 0, y: 0, z: 0}
   <shotAudio>k__BackingField:
     Guid:
-      Data1: -647033020
-      Data2: 1314272910
-      Data3: 1107944632
-      Data4: 1025634698
-    Path: event:/toy_soldier_shoot
+      Data1: 1314471295
+      Data2: 1106415419
+      Data3: 786352548
+      Data4: -1465451724
+    Path: event:/nutcracker_shot
   <placementAudio>k__BackingField:
     Guid:
-      Data1: 746450578
-      Data2: 1227690748
-      Data3: 892365959
-      Data4: -1900879224
-    Path: event:/toy_soldier_placement
+      Data1: -950956163
+      Data2: 1106558846
+      Data3: 1892949641
+      Data4: 1390311890
+    Path: event:/nutcracker_placement
   attributes:
     cost: 2
     attackRange: 7

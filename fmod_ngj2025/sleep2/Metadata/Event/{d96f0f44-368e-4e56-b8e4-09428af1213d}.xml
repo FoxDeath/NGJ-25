@@ -101,30 +101,39 @@
 	</object>
 	<object class="MixerBusPanner" id="{db0e0019-45f1-4382-a2e9-6cea88ca16fc}" />
 	<object class="MultiSound" id="{37354d9d-9318-4044-9ac4-2ebe500ff09b}">
+		<property name="volume">
+			<value>-10</value>
+		</property>
 		<relationship name="sounds">
-			<destination>{78b2e68f-3593-409f-94b6-42cf12ca5840}</destination>
 			<destination>{4aa57f00-df4f-4961-b2a8-782ed830233c}</destination>
+			<destination>{24b5ccc6-b688-4089-9e19-a160ab255f7f}</destination>
 		</relationship>
 		<relationship name="playPercentages">
-			<destination>{5775da02-6fcc-4dbe-ac50-6bbd61fd9c19}</destination>
+			<destination>{5347fe08-8e65-455b-bceb-d6fd5bd2e39d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{c47b6c03-fbe8-42dd-9467-6913eae0badb}" />
 	<object class="MixerBusFader" id="{303cdd43-d7f7-4385-aac2-ec806cd72992}" />
 	<object class="SpatialiserEffect" id="{18768b6f-d13c-4cf5-8efe-536ae4c5cf4a}" />
-	<object class="SingleSound" id="{78b2e68f-3593-409f-94b6-42cf12ca5840}">
-		<relationship name="audioFile">
-			<destination>{d8388e5a-9a74-4372-964c-46cae633e16d}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{4aa57f00-df4f-4961-b2a8-782ed830233c}">
+		<property name="volume">
+			<value>-80</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{023b9002-16ef-405b-bdcb-5d0d9cda6932}</destination>
 		</relationship>
 	</object>
-	<object class="PlayPercentage" id="{5775da02-6fcc-4dbe-ac50-6bbd61fd9c19}">
+	<object class="SingleSound" id="{24b5ccc6-b688-4089-9e19-a160ab255f7f}">
+		<property name="volume">
+			<value>10</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{96594bd4-30e7-47c6-ba7c-1c65c49b8211}</destination>
+		</relationship>
+	</object>
+	<object class="PlayPercentage" id="{5347fe08-8e65-455b-bceb-d6fd5bd2e39d}">
 		<property name="percentage">
-			<value>60</value>
+			<value>20</value>
 		</property>
 		<relationship name="sound">
 			<destination>{4aa57f00-df4f-4961-b2a8-782ed830233c}</destination>

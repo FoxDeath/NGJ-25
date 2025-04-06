@@ -5,7 +5,7 @@
 			<value>end_game_win</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{bdd73427-397d-468c-9507-92b9fe8ed08d}</destination>
@@ -96,7 +96,6 @@
 	<object class="MixerBusEffectChain" id="{121f45cb-a919-4932-bafa-65f03ce70da3}">
 		<relationship name="effects">
 			<destination>{4622f843-447f-46bf-8729-b31029b8f753}</destination>
-			<destination>{3c20e1e5-eac7-4167-ac93-00943735d6ef}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{b407c853-2549-4481-8c1e-9615d1ef2ee8}" />
@@ -107,7 +106,6 @@
 	</object>
 	<object class="MixerBusFader" id="{52646729-4fa2-4cd5-8a68-9fae34d9bf28}" />
 	<object class="MixerBusFader" id="{4622f843-447f-46bf-8729-b31029b8f753}" />
-	<object class="SpatialiserEffect" id="{3c20e1e5-eac7-4167-ac93-00943735d6ef}" />
 	<object class="SingleSound" id="{23ccb9f7-9109-416c-b599-7926621c6cfb}">
 		<relationship name="audioFile">
 			<destination>{f011d32d-7ef6-47cb-b6e5-57aeda1ac9b4}</destination>

@@ -5,7 +5,7 @@
 			<value>eng_game_lose</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{bdd73427-397d-468c-9507-92b9fe8ed08d}</destination>
@@ -96,7 +96,6 @@
 	<object class="MixerBusEffectChain" id="{200e2e02-78f0-4936-8584-28d5828e53d1}">
 		<relationship name="effects">
 			<destination>{dbfb7453-5390-424f-af38-52a41f41399d}</destination>
-			<destination>{e90d6174-39b6-4631-94b1-43dc14876091}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1c7337de-ff63-4bb4-be97-9225b5189857}" />
@@ -107,7 +106,6 @@
 	</object>
 	<object class="MixerBusFader" id="{b2907ec1-31da-4ef5-b5ab-afe8a82116cb}" />
 	<object class="MixerBusFader" id="{dbfb7453-5390-424f-af38-52a41f41399d}" />
-	<object class="SpatialiserEffect" id="{e90d6174-39b6-4631-94b1-43dc14876091}" />
 	<object class="SingleSound" id="{a19bf783-1180-467e-9776-40658a732ed6}">
 		<relationship name="audioFile">
 			<destination>{d618e5ef-afa9-4d42-ad48-8e0c2fe13393}</destination>

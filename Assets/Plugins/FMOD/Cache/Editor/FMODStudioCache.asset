@@ -42,11 +42,38 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638795299325386837
+  lastModified: 638795390011445511
   FileSizes:
   - Name: Desktop
-    Value: 387392
+    Value: 305312
   Exists: 1
+--- !u!114 &-7704860884747546978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/enemy_hurt
+  m_EditorClassIdentifier: 
+  Path: event:/enemy_hurt
+  Guid:
+    Data1: -959657534
+    Data2: 1218108614
+    Data3: -1693333834
+    Data4: -1371860443
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7462207590370848234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +89,10 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/MUSIC.bank
   Name: MUSIC
   StudioPath: bank:/MUSIC
-  lastModified: 638795299325309350
+  lastModified: 638795355178669406
   FileSizes:
   - Name: Desktop
-    Value: 275488
+    Value: 274080
   Exists: 1
 --- !u!114 &-6166952263682960399
 MonoBehaviour:
@@ -94,6 +121,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5822037195497739436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/doll_death
+  m_EditorClassIdentifier: 
+  Path: event:/doll_death
+  Guid:
+    Data1: 2027778261
+    Data2: 1196628379
+    Data3: 401877679
+    Data4: 1518028063
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5577880456649483511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,7 +163,7 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/AMBIENCE.bank
   Name: AMBIENCE
   StudioPath: bank:/AMBIENCE
-  lastModified: 638794810931985801
+  lastModified: 638794683472325069
   FileSizes:
   - Name: Desktop
     Value: 506
@@ -136,7 +190,7 @@ MonoBehaviour:
   - {fileID: -7906920643114349076}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -162,7 +216,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -186,6 +240,33 @@ MonoBehaviour:
     Data2: 1274411124
     Data3: 1598110910
     Data4: 20366333
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2526025793261171439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/shadoll_death
+  m_EditorClassIdentifier: 
+  Path: event:/shadoll_death
+  Guid:
+    Data1: 72426110
+    Data2: 1078050617
+    Data3: 1373880737
+    Data4: -1667859909
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
@@ -216,13 +297,13 @@ MonoBehaviour:
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2016354382887135469
+--- !u!114 &-1851821109483771712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,50 +313,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/soundtrack_final
+  m_Name: event:/dino_placement
   m_EditorClassIdentifier: 
-  Path: event:/soundtrack_final
+  Path: event:/dino_placement
   Guid:
-    Data1: 1822220009
-    Data2: 1133366999
-    Data3: 664850324
-    Data4: -309891616
-  Banks:
-  - {fileID: -7462207590370848234}
-  - {fileID: -7906920643114349076}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 10000
-  Length: 22258
---- !u!114 &-1274517934515185082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/spider_scream
-  m_EditorClassIdentifier: 
-  Path: event:/spider_scream
-  Guid:
-    Data1: -1452814062
-    Data2: 1259479584
-    Data3: 1986033834
-    Data4: -300098444
+    Data1: 791911977
+    Data2: 1319780844
+    Data3: 1798600374
+    Data4: 138066136
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 900
+  MaxDistance: 20
   Length: 0
 --- !u!114 &-1242557416438585779
 MonoBehaviour:
@@ -319,10 +372,10 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638795299325309350
+  lastModified: 638795366543395001
   FileSizes:
   - Name: Desktop
-    Value: 1500
+    Value: 1986
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -346,21 +399,58 @@ MonoBehaviour:
   - {fileID: -5227735976334810996}
   - {fileID: -2285568933998828748}
   - {fileID: -3669831236859794280}
-  - {fileID: -1274517934515185082}
   - {fileID: -2894889545250834251}
   - {fileID: 7486334812895913775}
   - {fileID: 7330288413108471634}
   - {fileID: -1242557416438585779}
   - {fileID: -8546565358487275404}
-  - {fileID: -2016354382887135469}
   - {fileID: -6166952263682960399}
+  - {fileID: -7704860884747546978}
+  - {fileID: 4567130004710837706}
+  - {fileID: 3877406433204056328}
+  - {fileID: 7318158744561017834}
+  - {fileID: -2526025793261171439}
+  - {fileID: 8027167080094624876}
+  - {fileID: 5178232915773629058}
+  - {fileID: -1851821109483771712}
+  - {fileID: 3552566224207002225}
+  - {fileID: 8513000506220002586}
+  - {fileID: -5822037195497739436}
+  - {fileID: 759266285882586505}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3260576198657691238}
   StringsBanks:
   - {fileID: -252537835568917559}
-  cacheTime: 638795299325386837
+  cacheTime: 638795390011445511
   cacheVersion: 131846
+--- !u!114 &759266285882586505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/tiny_jerry_death
+  m_EditorClassIdentifier: 
+  Path: event:/tiny_jerry_death
+  Guid:
+    Data1: 1218094043
+    Data2: 1149679890
+    Data3: 1539275940
+    Data4: -334449233
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3260576198657691238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,11 +466,146 @@ MonoBehaviour:
   Path: fmod_ngj2025/sleep2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638794810931990976
+  lastModified: 638795366543378427
   FileSizes:
   - Name: Desktop
     Value: 1524
   Exists: 1
+--- !u!114 &3552566224207002225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/jerry_death
+  m_EditorClassIdentifier: 
+  Path: event:/jerry_death
+  Guid:
+    Data1: -673261803
+    Data2: 1093289908
+    Data3: -1179103318
+    Data4: -1418054335
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3877406433204056328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/nutcracker_placement
+  m_EditorClassIdentifier: 
+  Path: event:/nutcracker_placement
+  Guid:
+    Data1: -950956163
+    Data2: 1106558846
+    Data3: 1892949641
+    Data4: 1390311890
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4567130004710837706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/dino_shot
+  m_EditorClassIdentifier: 
+  Path: event:/dino_shot
+  Guid:
+    Data1: 890574871
+    Data2: 1299922266
+    Data3: -717493373
+    Data4: 925843102
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5178232915773629058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/spinner_shot
+  m_EditorClassIdentifier: 
+  Path: event:/spinner_shot
+  Guid:
+    Data1: -2109361728
+    Data2: 1304517684
+    Data3: 1167529151
+    Data4: 628451547
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7318158744561017834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/spinner_placement
+  m_EditorClassIdentifier: 
+  Path: event:/spinner_placement
+  Guid:
+    Data1: -441945477
+    Data2: 1148149153
+    Data3: 291004585
+    Data4: -270404888
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7330288413108471634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,10 +620,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/spider_death
   Guid:
-    Data1: 797850936
-    Data2: 1098173844
-    Data3: -379121508
-    Data4: 1965707004
+    Data1: -1452814062
+    Data2: 1259479584
+    Data3: 1986033834
+    Data4: -300098444
   Banks:
   - {fileID: -7906920643114349076}
   IsStream: 0
@@ -406,7 +631,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 900
   Length: 0
 --- !u!114 &7486334812895913775
 MonoBehaviour:
@@ -430,7 +655,61 @@ MonoBehaviour:
   - {fileID: -7906920643114349076}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8027167080094624876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/nutcracker_shot
+  m_EditorClassIdentifier: 
+  Path: event:/nutcracker_shot
+  Guid:
+    Data1: 1314471295
+    Data2: 1106415419
+    Data3: 786352548
+    Data4: -1465451724
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8513000506220002586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/button_pickup
+  m_EditorClassIdentifier: 
+  Path: event:/button_pickup
+  Guid:
+    Data1: 608400241
+    Data2: 1269688090
+    Data3: -789766259
+    Data4: -1594540152
+  Banks:
+  - {fileID: -7906920643114349076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20

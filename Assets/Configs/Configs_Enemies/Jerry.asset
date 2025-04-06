@@ -19,20 +19,20 @@ MonoBehaviour:
       Data3: 1202174881
       Data4: 1320834475
     Path: event:/spider_steps
-  <screamAudio>k__BackingField:
+  <hurtAudio>k__BackingField:
     Guid:
-      Data1: -1452814062
-      Data2: 1259479584
-      Data3: 1986033834
-      Data4: -300098444
-    Path: event:/spider_scream
+      Data1: -959657534
+      Data2: 1218108614
+      Data3: -1693333834
+      Data4: -1371860443
+    Path: event:/enemy_hurt
   <deathAudio>k__BackingField:
     Guid:
-      Data1: 797850936
-      Data2: 1098173844
-      Data3: -379121508
-      Data4: 1965707004
-    Path: event:/spider_death
+      Data1: -673261803
+      Data2: 1093289908
+      Data3: -1179103318
+      Data4: -1418054335
+    Path: event:/jerry_death
   enemyName: Jerry
   sprite: {fileID: 4362977572589818981, guid: 1f0adc9eb713ea44eadfdb5441afdacf, type: 3}
   spriteOffset: {x: 0, y: 0, z: 0}
