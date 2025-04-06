@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private Transform spriteTransform;
 
     private bool isMoving;
+    private bool isSprinting;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -57,6 +58,9 @@ public class PlayerController : MonoBehaviour
         playerInput.Player._3.performed += ctx => SelectTower(2);
         playerInput.Player._4.performed += ctx => SelectTower(3);
         //playerInput.Player._5.performed += ctx => SelectTower(4);
+
+        playerInput.Player.Sprint.performed += ctx => { isSprinting = true; };
+        playerInput.Player.Sprint.canceled += ctx => { isSprinting = false; };
         
         playerInput.Player.PlaceTower.performed += ctx => PlaceTower();
         
@@ -154,6 +158,16 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 direction)
     {
+        var speed = this.speed;
+        
+        if (isSprinting)
+        {
+            speed = this.speed * 1.5f;
+        }
+        else
+        {
+            speed = this.speed;
+        }
         Vector3 move = new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
         transform.Translate(move);
 

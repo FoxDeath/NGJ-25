@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         // InitializeAmbience(FMODEvents.instance.ambience);
-        InitializeMusic(FMODEvents.instance.music);
+        //InitializeMusic(FMODEvents.instance.music);
     }
 
     private void Update()
@@ -66,9 +66,9 @@ public class AudioManager : MonoBehaviour
         ambienceEventInstance.start();
     }
 
-    private void InitializeMusic(EventReference musicEventReference)
+    public void InitializeMusic()
     {
-        musicEventInstance = CreateInstance(musicEventReference);
+        musicEventInstance = CreateInstance(FMODEvents.instance.music);
 
         musicEventInstance.start();
     }

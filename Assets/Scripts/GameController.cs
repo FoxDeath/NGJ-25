@@ -264,6 +264,8 @@ public class GameController : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1f;
+
+        FindAnyObjectByType<AudioManager>().InitializeMusic();
      
         gameStarted = true;
         startCanvas.SetActive(false);
