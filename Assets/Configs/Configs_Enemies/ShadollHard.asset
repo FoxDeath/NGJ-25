@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2a109cded7dc1147b9a5af358e48497, type: 3}
-  m_Name: Spoder
+  m_Name: ShadollHard
   m_EditorClassIdentifier: 
   <stepsAudio>k__BackingField:
     Guid:
-      Data1: 863918809
-      Data2: 1308031543
-      Data3: 1202174881
-      Data4: 1320834475
-    Path: event:/spider_steps
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <screamAudio>k__BackingField:
     Guid:
       Data1: -1452814062
@@ -33,12 +33,12 @@ MonoBehaviour:
       Data3: -379121508
       Data4: 1965707004
     Path: event:/spider_death
-  enemyName: Spoder
-  sprite: {fileID: 8716473925627089912, guid: 873cb7a917407c942b3bb4ea3cebc144, type: 3}
-  spriteOffset: {x: 0, y: 0, z: 0}
+  enemyName: Shadoll
+  sprite: {fileID: 1185736695788685524, guid: 681e4b11d7fcbf440970c1f7baa1e54c, type: 3}
+  spriteOffset: {x: 0, y: 5.5, z: 0}
   attributes:
-    health: 40
-    speed: 2
-    reward: 5
-    damage: 15
+    health: 8
+    speed: 6
+    reward: 1
+    damage: 5
   littleJerry: {fileID: 0}
